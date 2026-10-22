@@ -1,3 +1,8 @@
+---
+title: "Specification index"
+permalink: /specs/
+---
+
 # Specification index
 
 Status: proposed; not approved for implementation.

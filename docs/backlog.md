@@ -1,3 +1,7 @@
+---
+title: "Prioritized product backlog"
+---
+
 # Prioritized product backlog
 
 Status: proposed. Ordered by rank; P0 is the approval foundation, P1 the MVP, P2 deferred. Story points (SP) are relative estimates to revisit with the team, not day commitments. All issues are open at initialization.

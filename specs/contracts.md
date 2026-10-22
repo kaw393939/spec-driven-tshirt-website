@@ -1,3 +1,7 @@
+---
+title: "Proposed data and API contracts"
+---
+
 # Proposed data and API contracts
 
 Status: proposed; #4. REST-style JSON under `/api`; same-origin guest sessions. Handlers translate domain errors into consistent responses.

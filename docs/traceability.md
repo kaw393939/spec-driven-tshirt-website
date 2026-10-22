@@ -1,3 +1,7 @@
+---
+title: "Traceability matrix"
+---
+
 # Traceability matrix
 
 Status: proposed. `—` means not yet implemented/executed, not missing evidence for a completed feature. Issues link from the [backlog](backlog.md); acceptance definitions live in [functional specs](../specs/functional.md) and [quality specs](../specs/non-functional.md).
@@ -21,3 +25,5 @@ Status: proposed. `—` means not yet implemented/executed, not missing evidence
 | US-05 | Deferred scope research | #11 | Future spec review | — | Deferred |
 
 In each future implementation PR replace `—` with clickable PR/commit URLs, exact test paths/titles and evidence URLs; split rows when ACs have different evidence. Planning commits belong in review issues and the planning PR, not in the implementation column. Preserve superseded evidence/history and stable requirement IDs. A reviewer verifies both directions: each implementation change has a requirement; each completed AC has implementation and test evidence.
+
+Documentation publishing: SITE-01–05 are tracked in [issue #13](https://github.com/kaw393939/spec-driven-tshirt-website/issues/13); this hosting exception does not satisfy application acceptance criteria or M0 approval.

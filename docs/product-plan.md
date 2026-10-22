@@ -1,3 +1,7 @@
+---
+title: "Product plan"
+---
+
 # Product plan
 
 Status: proposed. Owner/approver: repository owner or designated instructor.

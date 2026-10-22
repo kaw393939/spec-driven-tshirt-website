@@ -1,3 +1,7 @@
+---
+title: "Testing strategy"
+---
+
 # Testing strategy
 
 Status: proposed; QA-01 / #5. **All tests below are planned and unimplemented.** No application test runs or passing results are claimed.

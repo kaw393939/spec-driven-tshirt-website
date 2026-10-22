@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/docs.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header>
+    <a class="site-name" href="{{ '/docs/' | relative_url }}">Project documentation</a>
+    <nav aria-label="Documentation">
+      <a href="{{ '/docs/' | relative_url }}">Overview</a>
+      <a href="{{ '/specs/' | relative_url }}">Specifications</a>
+      <a href="{{ '/docs/backlog.html' | relative_url }}">Backlog</a>
+      <a href="{{ '/docs/approval.html' | relative_url }}">Approval</a>
+      <a href="https://github.com/kaw393939/spec-driven-tshirt-website">GitHub</a>
+    </nav>
+  </header>
+  <main id="content" tabindex="-1">
+    <p class="status">Proposed documentation · Approval pending · Application coding is blocked</p>
+    <article>{{ content }}</article>
+  </main>
+  <footer><a href="{{ '/' | relative_url }}">Project home</a> · <a href="{{ '/docs/' | relative_url }}">Documentation</a></footer>
+</body>
+</html>
