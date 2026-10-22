@@ -1,41 +1,36 @@
 ---
-title: "Brand strategy"
+title: "Our brand"
 ---
 
-# Brand strategy
+# Our brand
 
-Status: proposed; BRAND-01 / issue #3. No name clearance or audience research has been performed.
+**Threadform** is our working name. The audience is creative students and early-career makers who want expressive, easy-to-wear T-shirts. The name and audience still need review.
 
-## Positioning
+## Give the brand a personality
 
-Working name **Threadform**. Primary archetype: **Creator**—self-expression, thoughtful design and making something personal. Target: creative students and early-career makers seeking expressive, easy-to-wear T-shirts. Promise: distinctive artwork with clear fit information and a straightforward shopping experience. Avoid unsupported quality, sustainability or sourcing claims.
+We chose the **Creator archetype**: a familiar character built around making things and expressing yourself. It helps us choose a consistent voice and look.
 
-Voice: curious, direct, encouraging. Headline: “Wear what you make of the world.” Supporting line: “Expressive tees. Clear sizing. Room to be yourself.” CTA: “Explore the collection”; product CTA: “Add to cart”; checkout CTA: “Place demo order”. No guilt copy or urgency pressure.
+Our voice: curious, friendly, and direct. Our headline: **“Wear what you make of the world.”** Buttons should say what happens: “Explore the collection,” “Add to cart,” and “Place demo order.”
 
-## Proposed visual identity
+The proposed look uses ink `#18212B`, warm paper `#FAF7F0`, orange `#B83A16`, and teal `#0B6660`; readable system fonts; roomy spacing; and clear product photos. Check contrast for each color pairing and never rely on color alone. Artwork and logos come later.
 
-| Element | Direction |
+## Persuasion without tricks
+
+Cialdini describes [seven principles of persuasion](https://www.influenceatwork.com/7-principles-of-persuasion/). Here is how we might use them responsibly:
+
+| Idea | Our example |
 | --- | --- |
-| Colors | Ink #18212B, paper #FAF7F0, accent orange #B83A16, secondary teal #0B6660 |
-| Typography | System sans for readable body; bold system sans headings; no external font dependency |
-| Layout | Generous spacing on a 4px scale, simple product grid, visible prices, mobile-first controls |
-| Imagery | Consistent neutral backgrounds and accurate artwork/color; meaningful alternative text |
-| Accessibility | Verify contrast for each actual pairing; color never carries stock/selection meaning alone |
+| Reciprocity: offer something useful | A free fit and care guide (AC-03). |
+| Consistency: support a person’s choices | Keep their cart, and let them change it (AC-05–06). |
+| Social proof: learn from others | Real, consented reviews later; none invented now. |
+| Authority: show trustworthy knowledge | Accurate materials and measurements (AC-03). |
+| Liking: be approachable | Friendly copy and an honest creative process. |
+| Scarcity: show real limits | Mark unavailable sizes from actual stock (AC-04). |
+| Unity: create shared belonging | Welcome people who enjoy making things. |
 
-Name, palette and copy are design hypotheses for approval. Logo and product art creation are outside this initialization.
+> **AI aside · Keep me honest.** I can write convincing testimonials or sustainability claims. We should only publish claims we can support. Our fictional demo content must be labeled, and fake reviews or countdowns don’t belong here.
+{: .callout .ai}
 
-## Ethical persuasion plan
+Before release, compare product copy with its source data and check stock messages. We haven’t researched the audience, cleared the name, or shown that these choices improve sales.
 
-Cialdini's [seven principles](https://www.influenceatwork.com/7-principles-of-persuasion/) provide the framework. The applications below are project proposals, not evidence of conversion gains.
-
-| Principle | Proposed application | Guardrail / verification |
-| --- | --- | --- |
-| Reciprocity | Useful fit/care guide without signup | Guide available without purchase or data collection; AC-03 |
-| Commitment / consistency | Preserve a voluntarily built cart | Editable/removable items; no preselected extras; AC-05–06 |
-| Social proof | Later, consented and attributable reviews | Deferred; no invented reviews, ratings or sales counters |
-| Authority | Explain materials and garment measurements | Product data supports every claim; no fabricated endorsements; AC-03 |
-| Liking | Friendly copy and relatable creative process | No invented founder identities or deceptive imagery; editorial review |
-| Scarcity | Mark genuinely unavailable variants | Derive from inventory; no countdowns or false low-stock warnings; AC-04 |
-| Unity | Inclusive maker-oriented language | Welcome varied identities; no coercive belonging claims; editorial review |
-
-Release review checks copy against source product data, verifies inventory messaging and confirms absent testimonials stay absent. Prototype/seed content is labeled fictional. Real reviews or claims need evidence and a new approved specification.
+**Try this:** does the Creator personality match the shirts you imagine us selling?

@@ -1,10 +1,28 @@
 ---
-title: "Testing strategy"
+title: "How we check our work"
 ---
 
-# Testing strategy
+# How we check our work
 
-Status: proposed; QA-01 / #5. **All tests below are planned and unimplemented.** No application test runs or passing results are claimed.
+Tests help answer a simple question: **does the shop do what we agreed?** Application tests are planned; none have been built or run yet.
+
+## Three sizes of test
+
+- **Unit:** check one small rule. Does two shirts at $20 each total $40?
+- **Integration:** check parts working together. Does changing a cart save the new quantity in the database?
+- **End-to-end (E2E):** try a full journey in a browser. Can a shopper choose a shirt and finish pretend checkout?
+
+We’ll also try a keyboard and screen reader, check phone layouts, and test failures such as “out of stock” and “payment declined.” [W3C’s accessibility introduction](https://www.w3.org/WAI/fundamentals/accessibility-intro/) explains why these checks matter.
+
+> **AI aside · Ask me to show the result.** A list of test names is a plan. It isn’t a passing test run. Ask which command ran, what version it checked, and where you can see the output.
+{: .callout .ai}
+
+Before merging a feature, run its relevant tests and have someone review it. Before the demo is ready, check the full shopping journey and [quality rules](../specs/non-functional.md). Use made-up data and an isolated test database.
+
+The table below connects test IDs to exact acceptance criteria. **U** means unit, **I** integration, **E** end-to-end, and **Q** quality check.
+
+<details markdown="1">
+<summary>Optional: test cases, proposed tools, and evidence</summary>
 
 ## Layers and cases
 
@@ -33,3 +51,5 @@ On each future PR: typecheck/lint, affected unit/integration tests, and affected
 For each test ID, store test path and exact test title, command/tool version, environment/build SHA, result and CI/artifact URL in the issue/PR and traceability matrix. Manual evidence records reviewer, date, steps and findings. Redact personal information. A rerun needs new evidence; never equate planned test IDs with executed tests.
 
 M0 validation is document review, link/identifier consistency and confirmation that no application scaffold exists. Application acceptance remains unverified until implementation and real tests exist.
+
+</details>

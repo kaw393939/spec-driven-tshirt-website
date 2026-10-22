@@ -1,39 +1,36 @@
 ---
-title: "Development workflow"
+title: "How we work"
 ---
 
-# Development workflow
+# How we work
 
-Status: proposed. Issues #1–#5 track review of this planning baseline.
+We’ll work in small steps, check each other’s changes, and improve the plan as we learn. That is how we’ll practice **Agile**.
 
-## Specification-first cycle
+## One task, from idea to done
 
-1. Clarify persona, problem and scope; create an issue linked to requirement IDs.
-2. Write observable Given/When/Then criteria and test cases; review the specification.
-3. Pass M0 before any application work. Later behavior changes also need spec review before coding.
-4. Create `feat/<issue>-<slug>` (or `docs/`, `fix/`, `test/`). Make atomic commits, e.g. `feat: validate cart quantities (refs #8)`.
-5. Implement only approved behavior; run relevant unit/integration tests and journey checks.
-6. Open a PR with issue, AC, spec, test and AI-assistance evidence. Update traceability in the same PR.
-7. Human review; fix findings; merge with issue references preserved. Close issues only after acceptance evidence is complete.
+1. **Describe the need.** Create a GitHub **issue**: a task with a goal and a checklist.
+2. **Agree on the rule.** Write or update the spec before coding. First, finish [our plan review](approval.md).
+3. **Make a branch.** A branch is a separate place to work. Example: `feat/8-cart`.
+4. **Save small changes.** A **commit** is a named checkpoint. Example: `feat: let shoppers remove a shirt (refs #8)`.
+5. **Check the result.** Run the relevant tests and explain what passed or failed.
+6. **Open a pull request (PR).** Ask someone to review the changes before merging them into the shared branch.
+7. **Close the loop.** Link the spec, issue, commit, and test results. Close the task when its checks are met.
 
-Bootstrap exception: GitHub's generated initial README commit precedes issue creation. Subsequent planning commits reference #1–#5 and arrive through a planning branch/PR.
+> **AI aside · You’re still the reviewer.** Ask me to explain a change, challenge an assumption, or show test evidence. An AI-written answer is a draft, not proof that the work is correct.
+{: .callout .ai}
 
-## Agile cadence and statuses
+## Keep the rhythm simple
 
-Proposed one-week iterations after M0: planning and dependency review; short daily progress/blocker updates; end-of-week demo and retrospective. Refine the ordered backlog weekly. Do not start blocked work. Keep one active story per contributor.
+After plan approval, try one-week work cycles: choose a small goal, share progress and blockers, show what works, and discuss what to improve. Work on one story at a time. Review the [task list](backlog.md) each week.
 
-Use open issue + labels to indicate backlog (`status:blocked` where applicable), active work via assignee and linked PR, `status:review` for review, and closed only after acceptance. Label families: `type:planning/feature/quality`, `priority:P0/P1/P2`; `epic` is reserved for future tracker issues. Milestones describe outcomes rather than invented deadlines.
+**Ready to start:** the requirement is clear, its checks are written, and its dependencies are finished.
 
-## Definition of ready
+**Done:** the agreed checks pass, someone reviews the PR, and docs and links are updated. Document reviews need human feedback; application tasks need actual test results.
 
-Approved requirement and testable ACs; issue/priority/dependencies; manageable estimate; no unresolved blocking decision; tests and fixtures planned; M0 passed for code.
+## A few practical rules
 
-## Definition of done
+Use `docs/`, `feat/`, `fix/`, or `test/` plus the issue number for branches. Labels show planning/feature/quality, priority, and blocked/review status. Don’t start blocked tasks. Keep passwords and personal information out of commits and AI prompts; explain material AI help in PRs.
 
-Approved scope met; relevant tests/checks pass; accessibility/security considerations verified; human PR review completed; documentation/traceability updated; commit and test evidence linked; no secrets or misleading claims. For planning, done means accepted documents and recorded human review, not application tests.
+GitHub Pages publishes these docs automatically. Human approval is currently a team rule; branch protection and application test automation are not configured. Before the first code PR, check available repository controls and set up PR review, no force pushes, and required checks when they exist. Record unavailable controls honestly. A solo owner records signoff in issue #1.
 
-## AI and repository controls
-
-AI can draft specs, suggest cases and assist implementation after approval. Humans verify output, assumptions and sources. PRs disclose material AI assistance and verification. Never copy secrets or personal records into prompts.
-
-M0 is a procedural gate, not an installed CI control. GitHub Pages is configured to build and publish this documentation automatically. No branch protection or application CI workflows are configured in this setup. Before first code PR, assess repository plan support and configure main-branch PR review, no force pushes, and required checks once checks exist; document any unavailable controls. Do not claim enforcement until configured. A solo owner unable to self-approve records explicit signoff in #1; independent review is preferred when available.
+**Learn more:** [GitHub’s guide to branches, commits, and pull requests](https://docs.github.com/en/get-started/using-github/github-flow).

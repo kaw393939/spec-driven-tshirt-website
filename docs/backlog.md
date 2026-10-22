@@ -1,10 +1,26 @@
 ---
-title: "Prioritized product backlog"
+title: "What we build first"
 ---
 
-# Prioritized product backlog
+# What we build first
 
-Status: proposed. Ordered by rank; P0 is the approval foundation, P1 the MVP, P2 deferred. Story points (SP) are relative estimates to revisit with the team, not day commitments. All issues are open at initialization.
+A **backlog** is our task list in priority order. Each GitHub issue is a place to discuss a task and record its checks.
+
+## Our three checkpoints
+
+1. **Agree on the plan (M0).** Review scope [#2](https://github.com/kaw393939/spec-driven-tshirt-website/issues/2), brand [#3](https://github.com/kaw393939/spec-driven-tshirt-website/issues/3), technology [#4](https://github.com/kaw393939/spec-driven-tshirt-website/issues/4), and tests [#5](https://github.com/kaw393939/spec-driven-tshirt-website/issues/5). Record approval in [#1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).
+2. **Find a shirt and use a cart (M1).** Browse [#6](https://github.com/kaw393939/spec-driven-tshirt-website/issues/6) → choose a size/color [#7](https://github.com/kaw393939/spec-driven-tshirt-website/issues/7) → manage the cart [#8](https://github.com/kaw393939/spec-driven-tshirt-website/issues/8).
+3. **Try checkout and check the whole shop (M2).** Pretend order [#9](https://github.com/kaw393939/spec-driven-tshirt-website/issues/9), then release checks [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10). Quality checks also happen as we build each feature.
+
+Accounts, reviews, and promotions stay in [the later list (#11)](https://github.com/kaw393939/spec-driven-tshirt-website/issues/11). Coding tasks are blocked until M0 approval.
+
+> **New term · Dependency** Something that must happen first. We need a cart before we can check out. That’s why task #9 waits for #8.
+{: .callout .concept}
+
+The detailed list below keeps our original priorities and estimates. **P0** means first, **P1** means needed for this version, and **P2** means later. **Story points** compare effort; they are not hours or deadlines.
+
+<details markdown="1">
+<summary>Optional: priorities, estimates, and dependencies</summary>
 
 | Rank | Item / issue | Epic | Priority / SP | Milestone | Dependencies | Acceptance source |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -23,3 +39,5 @@ Status: proposed. Ordered by rank; P0 is the approval foundation, P1 the MVP, P2
 Quality requirements apply within every feature PR; #10 consolidates release evidence rather than deferring quality until the end. All application issues #6–#10 are blocked by #1. No sprint or due date is promised before approval and team capacity review.
 
 M0 = documentation and specification approval. M1 = catalog/cart. M2 = sandbox checkout/release readiness. Completion order and dependencies take precedence over estimates.
+
+</details>

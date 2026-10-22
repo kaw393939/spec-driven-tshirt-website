@@ -1,10 +1,32 @@
 ---
-title: "Proposed data and API contracts"
+title: "Data and request details"
 ---
 
-# Proposed data and API contracts
+# Data and request details
 
-Status: proposed; #4. REST-style JSON under `/api`; same-origin guest sessions. Handlers translate domain errors into consistent responses.
+This page is a reference for when we start coding. You can skip the field names on your first visit.
+
+A **data model** describes what we remember. An **API contract** describes what one part of the application can ask another part to do.
+
+- A **product** is a shirt design.
+- A **variant** is one size/color combination.
+- A **cart** holds the shopper’s choices.
+- A **quote** is the total shown before the shopper agrees to order.
+- An **order** records a completed pretend purchase.
+
+## Two rules worth understanding now
+
+**Keep money exact:** store $19.99 as 1999 cents, not an approximate decimal.
+
+**Avoid duplicate orders:** if someone retries the same checkout request, return the same result instead of buying twice. The technical name is **idempotency**.
+
+> **AI aside · What if someone clicks twice?** That’s the kind of question a spec should answer before I write checkout code. We also need a plan for two people buying the last shirt at the same time.
+{: .callout .ai}
+
+The details below keep the exact field names, request paths, validation rules, and stock protections. These are proposed contracts, not existing endpoints.
+
+<details markdown="1">
+<summary>Optional: full data and API reference</summary>
 
 ## Data model
 
@@ -46,3 +68,5 @@ Checkout looks up an existing attempt before quote/cart validity checks, so an i
 In one transaction: lock cart and affected variants in stable ID order, revalidate quote/version/prices, conditionally decrement sufficient stock, create immutable order and successful attempt result, clear purchased lines, increment cart version, then commit. Roll back all mutations on failure. Store a terminal decline result without inventory/order changes; unexpected rolled-back failures may be retried safely. Concurrent requests with different keys cannot purchase the same cart twice because quote/cart version is checked under lock.
 
 Validation: trim text; email ≤254 chars with basic address syntax; name/street/city nonempty ≤120 chars each; state one of 50 states or DC; ZIP exactly five digits. Accept synthetic US addresses only. SQL is parameterized, output escaped, mutating requests check Origin. No client-submitted totals or raw payment credentials are accepted.
+
+</details>
