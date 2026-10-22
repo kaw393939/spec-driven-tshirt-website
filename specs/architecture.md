@@ -33,3 +33,7 @@ Begin with functions for `addItem`, `setQuantity`, `removeItem`, `calculateTotal
 **Tradeoff:** browser memory is simple, but refresh resets it and visitors can edit the data. That is appropriate for a labeled classroom simulation. Optional browser persistence needs a separate spec and safe handling of missing/corrupt data; no personal data should be stored.
 
 See [the data notes](contracts.md). ADR-001 and the former server architecture are [retired](../docs/changes.md).
+
+## Learn the server/browser boundary
+
+[The browser lab](../docs/browser-lab.md) defines WEB-01–03: identify served files, explain event/state/DOM changes, and observe reload. Its teaching widget is part of the documentation, not the unimplemented storefront.

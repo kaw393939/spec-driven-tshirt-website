@@ -9,8 +9,8 @@ title: "Before we start coding"
 The owner/instructor checks:
 
 - [ ] Scope/persona/task list accepted (#2): one product, sizes, browser-only demo.
-- [ ] Student audience/brand/design/persuasion decisions recorded (#21) and reviewed (#3).
-- [ ] HTML/CSS/JS plan and local data rules reviewed (#4).
+- [ ] Student brand brief, two annotated visual directions, chosen composition/revision and two persuasion applications recorded (#21) and reviewed (#3).
+- [ ] HTML/CSS/JS plan, local data rules and server/browser learning checks WEB-01–03 reviewed (#4).
 - [ ] Shopper checks, quality checks, collaboration and evidence reviewed (#5).
 - [ ] Peer questions and requested revisions resolved; #2–#5 closed with human review evidence.
 - [ ] Approver records name, date, PR link and exact reviewed commit in [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).

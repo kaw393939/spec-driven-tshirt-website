@@ -23,3 +23,7 @@ We did not reuse an old ID for a different rule. Existing completion evidence fo
 [Read the previous plan at its fixed commit](https://github.com/kaw393939/spec-driven-tshirt-website/tree/1ca9d7dd016d3e9219a7f466e03729301a70500e/docs). The old IDs and backlog are also preserved in Git history and their issues. Planning review issues #1–#5 continue, now reviewing this smaller assignment.
 
 The rewrite updates the plan, not its approval status. No storefront code has been implemented.
+
+## Brand studio rebuild
+
+[Issue #30](https://github.com/kaw393939/spec-driven-tshirt-website/issues/30) recenters the hub on branding the same plain white T-shirt. Audience, archetype, modernist/postmodernist-inspired compositions, ethical persuasion, and critique now lead the sequence. BR-04–05 add comparison/revision checks; WEB-01–03 add served-file/browser-state learning. Existing US-06–10 / AC-10–22 / NFR-06–09 keep their meanings. Docs-only interactive labs are authorized teaching aids, not storefront implementation or approval.

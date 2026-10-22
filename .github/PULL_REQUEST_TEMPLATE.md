@@ -15,7 +15,9 @@ Use real links. Add a row per requirement when the evidence differs.
 - Traceability page updated (link), or why its mapping is unchanged:
 - M0 approval record for application code (required before coding):
 
-- Peer question and decision/revision (or why not applicable):
+- Reviewed composition/design link and brand-choice IDs (for visible changes):
+- Peer interpretation/critique and decision/revision (or why not applicable):
+- Server/browser explanation and WEB evidence (when applicable):
 
 ## Review and AI assistance
 

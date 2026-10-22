@@ -3,28 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | default: site.title | escape }}</title>
+  <title>{{ page.title | escape }} · White / Space</title>
   <link rel="stylesheet" href="{{ '/assets/docs.css' | relative_url }}">
+  {% if page.lab %}<script src="{{ '/assets/studio.js' | relative_url }}" defer></script>{% endif %}
 </head>
-<body>
-  <a class="skip-link" href="#content">Skip to content</a>
-  <header>
-    <a class="site-name" href="{{ '/docs/' | relative_url }}">The T-shirt project</a>
-    <nav aria-label="Documentation">
-      <a href="{{ '/docs/' | relative_url }}">Start here</a>
-      <a href="{{ '/docs/activity.html' | relative_url }}">Today’s activity</a>
-      <a href="{{ '/docs/example.html' | relative_url }}">Example</a>
-      <a href="{{ '/specs/' | relative_url }}">Shop rules</a>
-      <a href="{{ '/docs/marketing.html' | relative_url }}">Marketing</a>
-      <a href="{{ '/docs/approval.html' | relative_url }}">Approval</a>
-      <a href="{{ '/docs/learn.html' | relative_url }}">Get help</a>
-      <a href="https://github.com/kaw393939/spec-driven-tshirt-website">GitHub</a>
+<body class="lesson-page">
+{% include studio-header.html %}
+<div class="lesson-shell">
+  <aside class="lesson-sidebar" aria-label="Studio lessons and references">
+    <p class="mini-label">The studio path</p>
+    <nav aria-label="Lessons">
+      <a href="{{ '/docs/brand-strategy.html' | relative_url }}"{% if page.step == 1 %} aria-current="step"{% endif %}><span>01</span> Give it meaning</a>
+      <a href="{{ '/docs/visual-design.html' | relative_url }}"{% if page.step == 2 %} aria-current="step"{% endif %}><span>02</span> Make it visible</a>
+      <a href="{{ '/docs/persuasion.html' | relative_url }}"{% if page.step == 3 %} aria-current="step"{% endif %}><span>03</span> Persuade honestly</a>
+      <a href="{{ '/docs/marketing.html' | relative_url }}"{% if page.step == 4 %} aria-current="step"{% endif %}><span>04</span> Find your audience</a>
+      <a href="{{ '/docs/activity.html' | relative_url }}"{% if page.step == 5 %} aria-current="step"{% endif %}><span>05</span> Agree on the spec</a>
+      <a href="{{ '/docs/browser-lab.html' | relative_url }}"{% if page.step == 6 %} aria-current="step"{% endif %}><span>06</span> Explain the web</a>
     </nav>
-  </header>
-  <main id="content" tabindex="-1">
-    <p class="status">Planning together · Approval pending · Shop coding comes after review</p>
+    <details><summary>Reference shelf</summary><nav aria-label="Project references">
+      <a href="{{ '/docs/example.html' | relative_url }}">Worked example</a>
+      <a href="{{ '/specs/' | relative_url }}">Shop behavior &amp; data</a>
+      <a href="{{ '/docs/backlog.html' | relative_url }}">Task list</a>
+      <a href="{{ '/docs/development-workflow.html' | relative_url }}">Working with AI &amp; Git</a>
+      <a href="{{ '/docs/testing-strategy.html' | relative_url }}">Checks &amp; critique</a>
+      <a href="{{ '/docs/traceability.html' | relative_url }}">Follow the evidence</a>
+      <a href="{{ '/docs/approval.html' | relative_url }}">Before coding</a>
+      <a href="{{ '/docs/instructor.html' | relative_url }}">Instructor notes</a>
+      <a href="{{ '/docs/changes.html' | relative_url }}">What changed</a>
+    </nav></details>
+    <p class="sidebar-note">Choose it.<br>Explain it.<br>Build it.<br>Show the evidence.</p>
+  </aside>
+  <main id="content" class="lesson-main" tabindex="-1">
+    <p class="eyebrow">{% if page.step %}STUDIO {{ page.step }} / 6{% else %}THE WHITE T-SHIRT PROJECT{% endif %}</p>
     <article>{{ content }}</article>
+    <div class="lesson-end"><a href="{{ '/docs/#studio-path' | relative_url }}">← Back to the studio path</a><a href="https://github.com/kaw393939/spec-driven-tshirt-website/issues/new/choose">Record a question on GitHub ↗</a></div>
   </main>
-  <footer><a href="{{ '/' | relative_url }}">Project home</a> · <a href="{{ '/docs/' | relative_url }}">Documentation</a></footer>
+</div>
+{% include studio-footer.html %}
 </body>
 </html>

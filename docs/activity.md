@@ -1,42 +1,46 @@
 ---
-title: "Today: write your first spec"
+title: "05 \u00b7 Write a spec someone can build"
+step: 5
 ---
 
-# Today: write your first spec
+# Turn a design choice into an agreement.
 
-**Your task:** describe one part of your T-shirt page clearly enough for a classmate or AI to build it.
+**Your task:** take one part of your chosen composition and write what another person or AI needs to build it.
 
-**Why:** writing the decision first helps you notice what is missing before code appears.
+**Why:** “make it look creative” leaves the decision to the generator. A spec connects your intention to visible choices and behavior.
 
-## Do these five things
+## Start with the design, not the cart
 
-1. **Name your shopper.** Write two sentences about who the shirt is for.
-2. **Make a brand choice.** Choose an archetype and one visual choice. Explain why they fit. Use [the brand guide](brand-strategy.md).
-3. **Pick one small feature.** For example, the size selector. Use [the worked example](example.md), then write your own version.
-4. **Write three checks.** Say what someone should do and what they should see.
-5. **Swap with a classmate.** They ask one question. Revise your spec or explain why it stays the same.
+Finish the [brand brief](brand-strategy.md), [two directions and critique](visual-design.md), and [persuasion annotations](persuasion.md) first. Then choose one part of the page, such as the opening section.
 
-> **Ask AI:** “Read my spec. Ask up to three questions about unclear choices. Do not write code yet.”
-{: .callout .ai}
-
-## Copy this into a GitHub issue
+Copy this into a [GitHub issue](https://github.com/kaw393939/spec-driven-tshirt-website/issues/new/choose):
 
 ```text
-Feature:
-Who is it for, and what do they need?
-Brand/design choice and reason:
-What should happen?
-Three checks:
+Audience and brand intention:
+Chosen design/sketch link:
+Archetype + visual/persuasion choice and reason:
+What appears (copy, image, type, spacing, order):
+What happens when someone interacts:
+Three checks a classmate can try:
 1.
 2.
 3.
 Peer question:
-What I changed and why:
-Spec link and requirement IDs:
+My revision or reason for keeping the choice:
+Spec section and stable requirement IDs:
 ```
 
-**You’re done when:** another student can explain the intended result and try your three checks without guessing.
+[See an annotated example](example.md). A sketch can express visual intent; written checks clarify content, layout, and behavior. Use both.
 
-**Turn in:** the issue link. Don’t submit a private AI conversation as the only record of a decision. Put the agreed decision in the spec or issue.
+> **Ask AI:** “Read my brief and sketch. What would you have to guess? Ask up to three questions. Do not write code yet.”
+{: .callout .ai}
 
-Before coding, [get the plan reviewed](approval.md). After that, use [the small-change workflow](development-workflow.md).
+## Review together
+
+A peer looks for one unclear decision. Update the shared spec, not just a private conversation. The instructor reviews the plan [before storefront coding](approval.md).
+
+After approval, ask AI for one bounded change, inspect its diff, make an [atomic commit](development-workflow.md#atomic-commits), and attach actual check results. Keep the selected design visible as the reference.
+
+**You’re done when:** someone can explain the brand intention, build this small part without guessing its key choices, and repeat your checks.
+
+**Next:** [06 · See the server and browser at work →](browser-lab.md)

@@ -4,16 +4,17 @@ title: "How we work with AI"
 
 # How we work with AI
 
-**Choose → explain → specify → build → check.** Keep the decisions somewhere your classmates can see them.
+**Find the meaning → design → critique → specify → build → explain.** Keep the decisions somewhere your classmates can see them.
 
 ## One feature at a time
 
-1. **Write the need.** Open an issue with a spec link and checks. [Use this short activity](activity.md).
-2. **Get a question.** A classmate finds one unclear part. Record their question and your decision in the issue; update the spec.
-3. **Review before code.** Complete [M0 approval](approval.md). Later behavior changes also need agreement on the changed spec first.
-4. **Ask AI for one change.** Name the issue and rule IDs. Ask it to explain the plan and stay within scope.
-5. **Inspect and check.** Review the diff, try the checks, and say what actually happened.
-6. **Open a PR.** Link the spec, issue, changed files, commits and results. Review it before merging; close the issue only when its checks are met.
+1. **Start with the brand/design.** Read [the brief](product-plan.md); create and critique two [visual directions](visual-design.md) before feature work.
+2. **Write the need.** Open an issue with a spec link and checks. [Use this short activity](activity.md).
+3. **Get a question.** A classmate finds one unclear part. Record their question and your decision in the issue; update the spec.
+4. **Review before code.** Complete [M0 approval](approval.md). Later behavior changes also need agreement on the changed spec first.
+5. **Ask AI for one change.** Name the issue and rule IDs. Ask it to explain the plan and stay within scope.
+6. **Inspect and check.** Review the diff, try the checks, and say what actually happened.
+7. **Open a PR.** Link the spec, issue, changed files, commits and results. Review it before merging; close the issue only when its checks are met.
 
 > **AI aside · You don’t need to accept my first answer.** Ask “What did you assume?” or “Show me where this change meets the spec.” Put the final choice in the shared record.
 {: .callout .ai}

@@ -1,8 +1,8 @@
 # Contributing
 
-Start with [AGENTS.md](AGENTS.md). Students can begin with [Today’s activity](docs/activity.md) and [the example](docs/example.md).
+Start with [AGENTS.md](AGENTS.md). Students begin with [the brand brief](docs/brand-strategy.md), [visual directions](docs/visual-design.md), and [persuasion](docs/persuasion.md), then [the spec activity](docs/activity.md).
 
-The project is one product with sizes, HTML/CSS/JavaScript, and pretend checkout. No backend or real purchases. [M0 approval](docs/approval.md) is still required before storefront coding; docs publishing is allowed.
+The central work is branding a plain white T-shirt and explaining the design. The implementation is one product with sizes, HTML/CSS/JavaScript, and pretend checkout. No backend or real purchases. [M0 approval](docs/approval.md) is still required before storefront coding; docs publishing is allowed.
 
 1. Choose an issue; read its spec/check IDs and dependencies.
 2. Record a peer question and your decision; agree on the spec before code.
