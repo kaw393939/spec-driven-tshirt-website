@@ -1,0 +1,47 @@
+# Proposed architecture
+
+Status: proposed; TECH-01 / #4. **ADR-001: pending approval.**
+
+## Decision and tradeoffs
+
+Propose a TypeScript modular monolith: Next.js/React presentation and HTTP handlers, application services, domain policies, and PostgreSQL repositories behind interfaces. One application and one database keep student setup and transactions understandable. Choose and pin supported runtime/framework versions after M0; no dependencies are installed now.
+
+Alternative: a separate SPA/API increases deployment and contract overhead for this scope. An external commerce platform hides learning objectives. Local static storage cannot demonstrate concurrent inventory and order transactions. Revisit the decision if independent deployment or real fulfillment becomes necessary.
+
+## Boundaries and patterns
+
+| Module | Responsibility | Pattern |
+| --- | --- | --- |
+| Catalog | Product/variant reads, matching and availability | Repository for persistence; query service |
+| Cart | Session-bound lines, expiry, server totals and validation | Application service + pure pricing/quantity policies |
+| Checkout | Quote validation, idempotency, order/inventory transaction | Application service orchestrates transaction/unit of work |
+| Orders | Immutable line snapshots and session-scoped confirmation | Repository and ownership policy |
+| Sandbox | Local deterministic success/decline simulation | PaymentPort adapter; no external provider or card fields |
+| UI | Pages, semantic forms and interaction state | Composition of reusable view components |
+
+UI calls application services through handlers; services depend on domain policies and repository/payment interfaces. Infrastructure implements these interfaces. Keep SQL, cookies and framework request types out of domain rules. Inject dependencies at application composition. No microservices, message queue, event bus or generalized abstraction framework.
+
+Browser → HTTP handler (validation/session/Origin) → application service → domain policy → repository → PostgreSQL. PaymentPort returns a deterministic local result before a short database transaction. Stock and quote are rechecked inside that transaction before order creation. No network payment side effects exist in this MVP.
+
+## Planned structure (create after approval)
+
+```text
+src/
+  app/                      # routes and thin request handlers
+  modules/
+    catalog/{domain,application,infrastructure}/
+    cart/{domain,application,infrastructure}/
+    checkout/{domain,application,infrastructure}/
+    orders/{domain,application,infrastructure}/
+  shared/{ui,validation}/
+tests/{unit,integration,e2e}/
+db/{migrations,seeds}/
+```
+
+No source, tests or database directories are scaffolded during M0. Small shared utilities require actual cross-module use; avoid a shared business-logic dumping ground.
+
+## Operational boundary and risks
+
+After approval: local development/test PostgreSQL, deterministic synthetic seed, separate test database, environment-based secrets ignored by Git, structured logs with request IDs and redacted contact/session data. No deployment in this initialization. Sandbox demo contact data expires after seven days; carts expire after seven days of inactivity; an explicit scheduled cleanup task is required before shared demo hosting.
+
+Risks: scope creep → exclusions/change control; inventory races → conditional updates and transaction tests; hallucinated requirements → human signoff; premature abstraction → small module interfaces; brand assumptions → usability review; real commerce mistaken for demo → persistent checkout disclaimer.
