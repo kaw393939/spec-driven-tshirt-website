@@ -15,3 +15,6 @@ Persona, scope, brand, architecture, tests, dependencies and estimates:
 
 ## Human review
 Approver and decision record; implementation waits for approval:
+
+## Delivery links
+Primary issue and requirement/check IDs; spec section; atomic commit URLs; PR URL; actual verification results. Record final SHAs here or in the PR after committing. A documentation change does not complete an application feature.

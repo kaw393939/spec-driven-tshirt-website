@@ -1,27 +1,30 @@
-## Outcome and issue
+## What changed and why?
 
-Refs #<!-- issue -->
+Refs #<!-- primary issue -->
 
-## Approved specification and acceptance criteria
+## Follow the work
 
-- Requirement/AC/NFR IDs and spec links:
-- M0 approval record (required for application code):
+Use real links. Add a row per requirement when the evidence differs.
 
-## Changes and verification
+| Requirement / AC | Spec section | Changed files | Atomic commit(s) | Verification evidence |
+| --- | --- | --- | --- | --- |
+| <!-- ID --> | <!-- link --> | <!-- paths/links --> | <!-- commit URLs --> | <!-- test ID + result link, or docs checks --> |
 
-- What changed and why:
-- Test IDs, exact commands, build SHA, results and evidence links (or document review for planning):
-- Manual accessibility/security checks where relevant:
-- Traceability matrix update:
-- Risks or unresolved decisions:
+- Exact commands/tools, checked commit/build SHA, and results:
+- Unrun checks, manual review limits, risks or blockers:
+- Traceability page updated (link), or why its mapping is unchanged:
+- M0 approval record for application code (required before coding):
 
-## AI assistance
+## Review and AI assistance
 
-- Material AI-generated contributions and human verification:
+- Material AI contributions and how they were verified:
+- Human review/decision link where required (never invent approval):
 
-## Review checklist
+## Before merging
 
-- [ ] Scope matches approved spec, or spec change reviewed first
-- [ ] No application implementation before M0 approval
-- [ ] Issue, ACs, commits and evidence linked
-- [ ] No fabricated approvals, results, claims or secrets
+- [ ] Correct issue and target branch; dependencies satisfied
+- [ ] Spec agreed before behavior changes; application work has M0 approval
+- [ ] Each commit has one purpose, an issue reference, requirement IDs and spec path
+- [ ] Spec → issue → files/commits → PR → real verification links are complete
+- [ ] No unrelated staged work, secrets, fabricated results or claims
+- [ ] Use `Closes #N` only if this PR fully meets the issue; verify closure after merge

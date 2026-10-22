@@ -19,6 +19,34 @@ We’ll work in small steps, check each other’s changes, and improve the plan 
 > **AI aside · You’re still the reviewer.** Ask me to explain a change, challenge an assumption, or show test evidence. An AI-written answer is a draft, not proof that the work is correct.
 {: .callout .ai}
 
+## Atomic commits
+
+**One commit is one small change you can explain and undo on its own.** Its code, directly related tests, and necessary docs can travel together. A separate feature or unrelated cleanup belongs in another commit.
+
+Every non-bootstrap commit links to its primary issue. Put requirement IDs and the source document in the body. Here is a **future example**, after coding is approved:
+
+```text
+feat(cart): reject invalid quantities (refs #8)
+
+Requirements: US-03, AC-05
+Spec: specs/functional.md#us-03--manage-a-cart
+```
+
+Before committing, inspect the diff and stage only your files or selected lines. `git diff --cached --check` finds whitespace problems; it does not prove the feature works.
+
+> **AI aside · Ask what belongs together.** If I mix a cart fix, a color redesign, and a README rewrite into one commit, ask me to split it. You should be able to see why each change exists.
+{: .callout .ai}
+
+## Leave a trail someone can follow
+
+In the issue and PR, link the **spec section → issue → changed files and commit URLs → PR → real check results**. Update [connecting the dots](traceability.md) when the mapping changes. The PR template has a small table for this.
+
+Record actual test commands, test IDs, results and the checked version. For docs-only work, record document and link checks. Add final commit/build links in the PR or issue after committing; a file does not need to record its own hash.
+
+Use `refs #N` for ongoing work. Use `Closes #N` only when the whole task is done; verify closure because GitHub handles automatic closing differently for non-default target branches.
+
+**Starting as a new agent?** Read [the root AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md). It explains the reading order, branch choice, approval rules and handoff checklist. The full plan is currently on `docs/1-planning-baseline`, pending PR #12; verify this state before starting.
+
 ## Keep the rhythm simple
 
 After plan approval, try one-week work cycles: choose a small goal, share progress and blockers, show what works, and discuss what to improve. Work on one story at a time. Review the [task list](backlog.md) each week.

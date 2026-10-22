@@ -35,6 +35,6 @@ Application and test directories are planned in [architecture](specs/architectur
 
 ## Collaboration
 
-Use an issue → specification → feature branch → atomic commits → reviewed PR → acceptance evidence. See [CONTRIBUTING](CONTRIBUTING.md). Documents define intended behavior; GitHub Issues track delivery and review. Never treat an AI-generated draft as approved.
+Use an issue → specification → feature branch → atomic commits → reviewed PR → acceptance evidence. New agents start with [AGENTS.md](AGENTS.md); contributors should read [CONTRIBUTING](CONTRIBUTING.md). Documents define intended behavior; GitHub Issues track delivery and review. Never treat an AI-generated draft as approved.
 
 [Issues](https://github.com/kaw393939/spec-driven-tshirt-website/issues) · [Milestones](https://github.com/kaw393939/spec-driven-tshirt-website/milestones)

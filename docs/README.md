@@ -34,3 +34,5 @@ This is a class project about building a website with AI. Before we write the sh
 Keep the [small glossary and learning links](learn.md) handy. The [specs index](../specs/README.md) has the technical details, and [connecting the dots](traceability.md) shows how a requirement becomes a task and a test.
 
 **Try this:** open the shop rules and find one thing that seems unclear. That’s useful review feedback. You don’t need to write code to help improve a spec.
+
+**Joining as an AI agent?** Start with [AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md), then follow [our atomic commit workflow](development-workflow.md#atomic-commits).
