@@ -1,41 +1,56 @@
 ---
-title: "Choose your brand and visual design"
+title: "01 \u00b7 Give the shirt a meaning"
+step: 1
 ---
 
-# Choose your brand and visual design
+# Who is this shirt for?
 
-Your brand is a set of choices you can explain. **Threadform / Creator is an example, not a required answer.** Decide your own identity before asking AI to style the site.
+**Your task:** make a plain white T-shirt mean something to one audience.
 
-## Make three decisions
+**Why:** a brand is a pattern of meaningful choices. An archetype helps you keep those choices consistent.
 
-- **BR-01 · Audience and promise:** describe one shopper, their need, your product’s benefit, and a working brand name.
-- **BR-02 · Personality and appearance:** choose an archetype; write a headline and button label; choose colors, type, imagery, and a page sketch. Explain how two visual choices support the brand.
-- **BR-03 · Ethical persuasion:** choose two Cialdini principles. Say where each appears, why it helps this shopper, and how you’ll keep it honest.
+## Make the choices
 
-Record these in [issue #21](https://github.com/kaw393939/spec-driven-tshirt-website/issues/21). A classmate asks one question; record your revision or reason for keeping the choice.
+- **BR-01 · Audience and promise:** describe one person, what they care about, and what wearing your shirt could express. Give the brand a working name.
+- **BR-02 · Personality:** choose an archetype, three voice words, a headline, and a button label. Explain how they serve that audience. Later, connect them to visual choices.
 
-## Use the vocabulary from class
+Examples to question, not copy:
 
-For a **modernist direction**, you might explore grids, hierarchy, restraint, and clear function. For a **postmodernist direction**, you might explore expressive type, unexpected combinations, playful references, or broken grids. These are design prompts, not complete definitions of either movement. Use your course examples, and explain the choice rather than just naming a style. A mixture is fine when you can justify it.
+| Direction | The meaning | A possible line |
+| --- | --- | --- |
+| Explorer | Independence and possibility | “Take the long way.” |
+| Creator | An open starting point | “Make something of it.” |
+| Everyperson | Everyday belonging | “A little more like you.” |
 
-> **Try it:** “Our Creator brand uses an unexpected headline arrangement to suggest experimentation. The price and size controls stay easy to find.”
-{: .callout .concept}
+These are illustrative interpretations, not product claims or universal formulas. You can choose another archetype from class. An Explorer brand does not have to use mountains or green.
 
-## Persuasion ideas to consider
+## Try the same product in different stories
 
-| Cialdini principle | A possible use |
-| --- | --- |
-| Reciprocity | A helpful fit guide without signup. |
-| Consistency | Let shoppers review and edit their choices. |
-| Social proof | Only real, permissioned evidence; omit reviews if none exists. |
-| Authority | Clear, accurate product information. |
-| Liking | A friendly voice that fits the audience. |
-| Scarcity | Explain simulated size availability honestly; never fake urgency. |
-| Unity | Language that welcomes a shared interest. |
+[Open the interactive brand lab →](brand-lab.md)
 
-[Read Cialdini’s explanation](https://www.influenceatwork.com/7-principles-of-persuasion/). The applications above are suggestions, not claims of sales results.
+Change the archetype, then change the composition. Notice how the same white shirt can feel different without inventing a new fabric or feature.
 
-> **AI aside · Ask for alternatives.** “Show two visual directions for our archetype and explain the tradeoffs.” Choose one yourself and record why. Don’t let me invent reviews, certifications, product claims, or research.
+> **Ask AI:** “Suggest two brand territories for this audience. Explain the differences. Don’t choose for me or invent research.”
 {: .callout .ai}
 
-**Hand in:** a small brand board, your page sketch, two persuasion choices, and your reasons. Then plan [how people will find the page](marketing.md).
+## Hand in a small brand brief
+
+Copy and complete:
+
+```text
+My audience is …
+They care about …
+Our plain white shirt represents …
+Our working name and archetype are …
+Our voice is … / … / …
+Our headline is …
+This fits our audience because …
+```
+
+Record it in [issue #21](https://github.com/kaw393939/spec-driven-tshirt-website/issues/21). It is your hypothesis, not a claim that you interviewed customers.
+
+**You’re done when:** you can explain why the idea fits your audience without pointing only to a logo.
+
+**Read further:** [Mark and Pearson’s archetypal branding framework](https://carolspearson.com/books-page/the-hero-and-the-outlaw-building-extraordinary-brands-through-the-power-of-archetypes). Use the course vocabulary as a design lens, not a scientific prediction of customer behavior.
+
+**Next:** [02 · Make two visual directions →](visual-design.md)

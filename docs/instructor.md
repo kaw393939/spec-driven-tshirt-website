@@ -1,29 +1,38 @@
 ---
-title: "Instructor notes"
+title: "Instructor notes: a brand studio that teaches the web"
 ---
 
-# Instructor notes
+# Teach the reasoning behind the page.
 
-The student entry point is [Today’s activity](activity.md), not the full documentation library. Students need basic Git and the vocabulary from class; no backend knowledge or package setup is assumed.
+The shared starting point is a plain white T-shirt. The central work is creating meaning through audience, archetype, ethical persuasion, and visual composition. The website lets students express, specify, build, and critique those decisions while learning the server/browser boundary.
 
-## A repeatable teaching loop
+## A short studio sequence
 
-Model one small feature using [the worked example](example.md). Then students write a need, justify a brand/design choice, exchange one peer question, revise the spec, and—after approval—ask AI for one change. Review the diff together and try the checks.
+1. Brand meaning: audience, promise, archetype and voice.
+2. Two compositions: same brief, modernist/postmodernist-inspired approaches, with annotations.
+3. Persuasion: two Cialdini applications and their honest limits.
+4. Discovery: one consistent promotion-to-page journey.
+5. Spec collaboration: peer question, revision, agreed checks, then instructor approval.
+6. Browser explanation: requested files, JS events/state/DOM, reload, and conceptual REST.
 
-Keep the learner responsible for decisions. AI may offer alternatives and questions, but shouldn’t silently choose their audience, archetype or visual direction.
+Start with [the visual brand lab](brand-lab.md), then [the brief](product-plan.md). Model a critique: ask who the design appears to address, what it feels like, and what evidence supports that reading.
 
-## Look for three pieces of evidence
+## Evidence to discuss
 
-1. **A choice:** can the student connect a visible design/copy decision to audience, archetype, persuasion or visual vocabulary?
-2. **A revision:** can they show a peer question or AI assumption they addressed?
-3. **A check:** can someone follow the spec/issue/commit/PR links and repeat the stated result?
+| Learning | What students can show |
+| --- | --- |
+| Brand/design reasoning | A visible choice connected to audience, archetype, persuasion or composition. |
+| Critique and revision | Two annotated directions, real peer notes, a chosen direction and a concrete revision. |
+| Specification and AI collaboration | A design reference, observable checks, an ambiguity resolved, and the resulting diff. |
+| Web understanding | Network/Elements observations and an explanation of where JS runs and state lives. |
+| Traceability | A path from brand decision to requirement, issue, atomic commit, PR and actual result. |
 
-A polished generated page alone doesn’t show this understanding. Full prompt transcripts aren’t required; record decisions, relevant AI assistance, and evidence instead.
+Grading weights and team arrangement remain instructor choices. Evaluate students’ ability to explain and revise choices alongside technical functionality. A polished generated page alone is insufficient evidence of reasoning.
 
-## Teach AGENTS.md through use
+## Keep it introductory
 
-Ask students what every new AI helper should know. Start with five rules: read the spec/issue, ask about ambiguity, keep to one feature, link the change, and report real checks. Compare their suggestions with [our guide](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md). These instructions guide behavior; they do not enforce correctness.
+No backend, app API, package setup, story-point exercise or automation suite is a prerequisite. Browser-only size/cart/demo checkout provides the JS learning context after approval. Manual repeatable checks come first; small JS assertions can follow.
 
-No sprint ceremony, story-point exercise, backend transaction tests, or automated E2E setup is required. Manual repeatable checks come first; introduce small JS assertions and browser tools when they serve the lesson.
+[AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md) is a standing brief for new AI helpers. Ask students to propose five rules, then inspect whether the agent followed them. Instructions guide behavior; they aren’t automatic enforcement.
 
-Course-wide M0 is still pending. A peer’s agreement is useful feedback and does not substitute for instructor approval. Team arrangement and grading weights remain instructor choices.
+The docs lab interactions are authorized teaching aids. Storefront implementation and M0 are still pending. Peer critique does not substitute for instructor signoff.

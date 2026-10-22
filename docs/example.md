@@ -1,49 +1,58 @@
 ---
-title: "Example: choose a size"
+title: "Worked example: meaning becomes a spec"
 ---
 
-# Example: choose a size
+# From an idea to a checkable design.
 
-This is a **worked spec**, not a finished feature. It uses [US-07 / AC-12–13](../specs/functional.md#us-07--choose-a-size), tracked in [issue #23](https://github.com/kaw393939/spec-driven-tshirt-website/issues/23).
+This is a **fictional worked example**. It is not a required student brand, completed student work, or a finished storefront.
 
-## 1. A shopper’s need
+## 1 · Meaning
 
-“I want to know which sizes are available before adding the shirt.”
+**Audience:** students who enjoy making things. **Archetype:** Creator. **Promise:** a white shirt as an everyday starting point for expression. Working headline: **“Make something of it.”** This is symbolic positioning, not a special fabric claim.
 
-## 2. Our design decision
+## 2 · Two directions, one brief
 
-Use labeled size buttons and show the measurements nearby. For our example brand, an orderly layout supports a clear, practical voice. Another brand may make different visual choices, but the controls still need to be readable.
+**A, modernist-inspired:** an aligned grid, restrained type, generous space, one large shirt image. The calm structure makes the blank starting point the focus.
 
-## 3. The rule
+**B, postmodernist-inspired:** layered “start here” text, mixed type, and a deliberately offset image. The experiment suggests making and play. Product facts stay the same.
 
-Do not select a size automatically. Only an available size can be added. If the shopper tries without a size, show “Choose a size first” and leave the cart unchanged.
+We choose B for this example because we want experimentation to be visible. Another team can defend A or a combination.
 
-## 4. Three checks
+## 3 · Persuasion
 
-- **CHECK-03:** choose an available size, add it, and confirm the cart shows that size.
-- **CHECK-04a:** try adding without a size; confirm the helpful message and unchanged cart.
-- **CHECK-04b:** try a size marked unavailable; confirm it cannot be added.
+**Reciprocity:** a fit guide is available without signup. **Unity:** welcoming language speaks to people who enjoy making things. Neither invents popularity or claims everyone belongs to the same group.
 
-> **A classmate asks:** “How will I know which size I picked?”
->
-> **Our revision:** show the selected size in text and the control state. Don’t use color alone. This is a sample peer exchange, not evidence of a real student review.
-{: .callout .concept}
+## 4 · Critique and revision
 
-## 5. After approval, ask AI for one change
+A fictional peer says, “I notice the headline, but the price gets lost.” The revision keeps the expressive headline and moves the price to a predictable place beside the shirt. Actual students must record real critique.
 
-“Read AGENTS.md and US-07. Implement only size selection for issue #23. Explain your plan, then show the change and check results.”
+## 5 · A small visual spec
 
-A future commit could be:
+**Intent:** playful expression with clear product information. **Reference:** the revised composition B.
+
+- Use the exact headline above and the team’s documented type/color choices.
+- Put the shirt image, price, and purchase link together; the purchase link leads to size controls.
+- Preserve readable contrast and a logical heading order when the layout becomes one column on a phone.
+
+**Try the checks:** compare the page with the sketch; ask a peer what personality they infer; locate price and size action at phone width. Record differences and revise the spec or implementation explicitly.
+
+> **AI aside · A useful review has two questions.** “Does this match the agreed design?” and “Does the design communicate what we intended?” Passing one does not automatically answer the other.
+{: .callout .ai}
+
+## 6 · Connect design and behavior
+
+The opening section belongs to [US-06 / AC-10–11, issue #22](../specs/functional.md#us-06--understand-the-product). Size selection then follows [US-07 / AC-12–13, issue #23](../specs/functional.md#us-07--choose-a-size): no size selected initially, only available sizes add, and errors leave the cart unchanged.
+
+A **future** commit after approval could say:
 
 ```text
-feat: require an available size (refs #23)
+feat: express the reviewed Creator opening (refs #22)
 
-Requirements: US-07, AC-12, AC-13
-Spec: specs/functional.md#us-07--choose-a-size
+Requirements: US-06, AC-10, AC-11, BR-02, BR-04, BR-05
+Spec: specs/functional.md#us-06--understand-the-product
+Design: link to the team’s reviewed composition in issue #21
 ```
 
-## 6. Show the evidence
+Link the actual files/commit/PR/results after the work exists. None of this storefront implementation has been completed.
 
-The issue and PR will link the spec, changed files, commit, and results for CHECK-03/04. Right now those code and result links are **not available: the feature is not built**.
-
-**Your turn:** write the cart’s “remove item” rule using the same steps.
+[Write your own spec →](activity.md)

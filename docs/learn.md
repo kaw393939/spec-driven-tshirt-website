@@ -4,7 +4,7 @@ title: "Get help"
 
 # Get help
 
-Stuck? Start with [the size-selector example](example.md). Use these words when you need them; you don’t have to memorize the table.
+Stuck? Start with [the brand-to-spec example](example.md), [the brand lab](brand-lab.md), or [the browser lab](browser-lab.md). Use these words when you need them; you don’t have to memorize the table.
 
 | Word | Plain meaning |
 | --- | --- |
@@ -34,4 +34,4 @@ Stuck? Start with [the size-selector example](example.md). Use these words when 
 - [Cialdini’s principles](https://www.influenceatwork.com/7-principles-of-persuasion/) — connect persuasion to honest choices.
 - [Official AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md) — how Codex reads project instructions.
 
-For archetypes and modernism/postmodernism, start with the examples from class. In [the brand activity](brand-strategy.md), explain a concrete choice rather than relying on a style label.
+For archetypes and modernism/postmodernism, start with the examples from class and [our visual-design activity](visual-design.md). In [the brand activity](brand-strategy.md), explain a concrete choice rather than relying on a style label.

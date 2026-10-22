@@ -1,35 +1,37 @@
 ---
-title: "How will people find it?"
+title: "04 \u00b7 Help the right people find it"
+step: 4
 ---
 
-# How will people find it?
+# Carry the brand beyond the page.
 
-A working page needs a way for people to discover it. Plan this before asking AI to build it. Track the work in [issue #26](https://github.com/kaw393939/spec-driven-tshirt-website/issues/26).
+**Your task:** design one path from a promotional message to your product page.
 
-## Make three choices
+**Why:** the promise in the post and the feeling on the page should belong to the same brand.
 
-1. **Search:** write one phrase your shopper might use. Use natural, descriptive language in the page title, main heading, and product copy. Add a short page description.
-2. **Sharing:** choose a preview title, description, and image that represent the product. Specify Open Graph metadata so supporting platforms can use them.
-3. **Promotion:** choose one channel your audience uses. Draft one post with a clear message and a working link to the product page. You do not need to publish it or buy advertising.
+## Choose a route
 
-Example: a student maker shirt promoted through a sample club post. The post and page should make the same promise.
+1. **Audience and channel:** where might this person encounter your brand? Give a reason; treat it as a hypothesis.
+2. **Sample promotion:** write one post with a visual direction, a short message, and a clear product-page link. No actual posting or paid ads required.
+3. **Page arrival:** identify the headline/image that continues that promise. The shopper should recognize the same voice and identity.
 
-> **New term · Discoverability** How someone finds your page. **Marketing** includes how you get their attention and explain why the product matters. Neither is a promise that they will buy.
-{: .callout .concept}
+Example: a fictional campus creative club shares an expressive Creator-brand composition. The linked page continues the same message. This is a sample, not a real endorsement.
 
-## What should the website include?
+## Make the page understandable to search and sharing tools
 
-- Product name, benefit, price, image descriptions, and size guide.
-- A descriptive HTML title, one clear main heading, and useful page copy.
-- A short meta description; canonical URL and sharing tags using the actual published URL.
-- Demo delivery/returns information clearly marked fictional. No invented customer reviews or trust badges.
-- An easy-to-find buying action. Important product information should be in HTML even before JavaScript runs.
+Specify a descriptive HTML title, a short meta description, a clear main heading, natural product/audience wording, and meaningful image descriptions. Keep important product content in HTML.
 
-Exact checks are [AC-20–22](../specs/functional.md#us-10--find-and-share-the-page). Search engines decide indexing/ranking and platforms decide previews; tags cannot guarantee either. Read [Google’s starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [the Open Graph specification](https://ogp.me/).
+For sharing, choose Open Graph title, description, type, image, and URL. Use the actual published HTTPS page/image URLs. The preview should represent the brand honestly.
 
-## A simple interest check
+[Google’s starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) explains search basics; [Open Graph](https://ogp.me/) describes sharing metadata. Search engines/platforms decide indexing, ranking, and previews; tags don’t guarantee attention or sales.
 
-Ask a classmate to open the page from your sample promotion. Can they explain the product, find the price, and locate the purchase action? Record what happened and one improvement. Use a manual observation, not an analytics service or tracking pixel.
-
-> **AI aside · Ask me what I assumed.** If I recommend a channel, ask why it fits your audience. Treat that answer as a hypothesis you can discuss, not evidence that we researched your customers.
+> **Ask AI:** “Compare this sample post with my homepage. Where do the tone, image direction, or promise stop matching?”
 {: .callout .ai}
+
+## Check the path
+
+Show the sample promotion and linked page to a peer. Can they explain what the brand stands for, find the price, and locate the buying action? Record their words and one improvement. A manual observation is enough; no tracking pixel or analytics backend.
+
+**Hand in:** one sample promotion, search/sharing text, and the peer observation. Track it in [issue #26](https://github.com/kaw393939/spec-driven-tshirt-website/issues/26); technical checks remain [AC-20–22](../specs/functional.md#us-10--find-and-share-the-page).
+
+**Next:** [05 · Turn the design into a shared spec →](activity.md)

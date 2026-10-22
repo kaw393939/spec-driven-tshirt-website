@@ -8,6 +8,7 @@ labels: "type:planning"
 ## What is the feature, and who needs it?
 
 ## Brand/design choice and reason
+Link the reviewed composition, archetype/visual/persuasion rationale, and relevant BR IDs. Don’t start with an unreviewed AI layout.
 
 ## What should happen?
 Link the spec section and stable requirement/AC IDs. New behavior needs agreement before code.

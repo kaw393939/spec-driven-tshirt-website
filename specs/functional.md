@@ -6,6 +6,8 @@ title: "What the shop should do"
 
 **One T-shirt. Size choices. Pretend purchases.** All behavior below runs in browser JavaScript after the plan is approved. These features are not built yet.
 
+Start with the reviewed [brand and visual decisions](../docs/brand-strategy.md), [two compositions](../docs/visual-design.md), and [persuasion annotations](../docs/persuasion.md). The page must express that chosen direction; its shopping controls support it. BR-04–05 and WEB-01–03 supplement these unchanged shopper checks.
+
 An **acceptance criterion (AC)** is a check we can try. Each one links to a planned check in [how we check our work](../docs/testing-strategy.md).
 
 ## US-06 — Understand the product

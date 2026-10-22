@@ -5,6 +5,8 @@ permalink: /specs/
 
 # The shop rules
 
+The brand brief and chosen composition are design inputs, not optional decoration. Read [the studio brief](../docs/product-plan.md), [visual direction checks](../docs/visual-design.md), and [persuasion choices](../docs/persuasion.md) first.
+
 These are the proposed rules for **one product with sizes**. The browser handles the shopping simulation; there is no backend.
 
 - [What should happen?](functional.md) — five small shopper stories with checks.

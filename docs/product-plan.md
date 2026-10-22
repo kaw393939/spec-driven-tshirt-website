@@ -1,35 +1,34 @@
 ---
-title: "The assignment"
+title: "The brief: brand the ordinary"
 ---
 
-# Build a one-product shop
+# Start with something ordinary.
 
-**The goal:** use a written plan to direct AI, then show that the result follows your decisions.
+Everyone starts with **a plain white T-shirt**. Your challenge is to give it meaning for a specific audience, then express that meaning through a website.
 
-Your website sells one T-shirt with size choices. Shopping runs in the browser using **HTML, CSS, and plain JavaScript**. GitHub Pages hosts the files. Purchases are pretend.
+The product stays simple. The audience, name, story, images, type, color, composition, and voice make your brand distinctive.
 
-## What you’ll make
+## The question behind the project
 
-1. **A product page:** images, benefits, price, size guide, and a clear buying action.
-2. **A shopping simulation:** choose a size, use a cart, and place a demo order.
-3. **A discoverable page:** useful search information, a sharing preview, and one sample promotion.
+**Why would someone identify with your shirt rather than another white shirt?**
 
-No catalog, filters, color options, account system, backend, database, real payment, tracking service, or personal-data collection. Remembering a cart after refresh is an optional later exercise, not a requirement.
+Think about an everyday product discussed in class. What did its brand add: a ritual, an identity, a sense of possibility? Use that as an analogy, not a template to copy.
 
-## Start with a person
+## What you will make
 
-Describe one likely shopper in two sentences: what do they care about, and what might stop them buying? That is your **persona**, not a claim that you interviewed someone.
+1. **A brand concept:** audience, promise, archetype, voice, and two ethical persuasion choices.
+2. **Two visual directions:** modernist-inspired and postmodernist-inspired compositions for the same brand. Compare, get critique, choose, and revise.
+3. **A shared specification:** turn your chosen design and interactions into clear checks before AI codes.
+4. **A browser-only site:** one product, size choices, a cart, and a pretend purchase in HTML/CSS/JavaScript.
+5. **A short explanation:** show what GitHub Pages sends, what the browser changes, and where one design decision appears in the spec, issue, commit, and result.
 
-Example: “Maya wants a shirt that expresses her interest in making things. She shops on her phone and worries about fit.” Also consider someone using a keyboard or screen reader.
+> **AI aside · I can decorate a page.** You need to decide what it means. Tell me who it is for and what feeling the design should communicate before asking for a layout.
+{: .callout .ai}
 
-## What you’ll hand in
+## Keep the scope small
 
-- A short brand/design plan and a page sketch, with reasons.
-- A spec issue with checks, a peer question, and your response.
-- After approval: a working demo and links from the spec to commits, PR, and check results.
+One shirt, sizes, no color variants. No backend, database, real payments, accounts, personal-data fields, or tracking. GitHub Pages serves files; JavaScript simulates the shopping interaction. Cart persistence is optional later work.
 
-We’ll look for choices you can explain, a revision you made from feedback, and evidence that the page works.
+The storefront is **not built yet**. The hub’s brand and browser experiments are teaching examples, not the student shop. Coding waits for [approval](approval.md).
 
-The big goals (**epics**) are EP-05: decide the brand; EP-06: build one shopping journey; EP-07: help people discover it and check the result. [See the tasks](backlog.md).
-
-**Next:** [Write your first spec](activity.md).
+**Start:** [Give your shirt a meaning →](brand-strategy.md)

@@ -6,6 +6,14 @@ title: "How we check our work"
 
 **All storefront checks are planned, not run.** The documentation site is live; the shop is not built.
 
+## Check the creative intention first
+
+Before storefront implementation, review BR-01–03 in the [brand](brand-strategy.md)/[persuasion](persuasion.md) activities and BR-04–05 in [visual design](visual-design.md). Compare the two compositions, chosen rationale, real peer interpretation and before/after revision. Use the reviewed sketch as the visual reference in issue #22. A functional pass does not prove the brand intention communicated well.
+
+WEB-01–03 in [the browser lab](browser-lab.md) ask for Network/DOM/reload observations; student evidence is pending in #31. The docs widgets can be exercised now; that is not evidence that a student storefront exists.
+
+## Then check the shopping behavior
+
 Start with “do this → expect that.” Record the browser, checked commit, action, result, and a screenshot or output link in the issue/PR. A classmate should be able to repeat it.
 
 | Check | Try this | Rule / issue |
@@ -38,3 +46,7 @@ Start with these manual checks. As JavaScript is introduced, add small automated
 {: .callout .ai}
 
 For docs-only changes, check Markdown links, front matter, IDs, Pages build, and published content. Never report those as passing storefront tests.
+
+## Maintainer checks for the learning hub
+
+`node scripts/check-studio.cjs` exercises the docs-only brand/browser widget state using small DOM stand-ins, with no package install. It does not replace native-browser layout/keyboard checks and does not verify a student storefront. Student results for BR/WEB and shopper checks remain separate.
