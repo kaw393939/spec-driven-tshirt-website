@@ -4,52 +4,37 @@ title: "How we check our work"
 
 # How we check our work
 
-Tests help answer a simple question: **does the shop do what we agreed?** Application tests are planned; none have been built or run yet.
+**All storefront checks are planned, not run.** The documentation site is live; the shop is not built.
 
-## Three sizes of test
+Start with “do this → expect that.” Record the browser, checked commit, action, result, and a screenshot or output link in the issue/PR. A classmate should be able to repeat it.
 
-- **Unit:** check one small rule. Does two shirts at $20 each total $40?
-- **Integration:** check parts working together. Does changing a cart save the new quantity in the database?
-- **End-to-end (E2E):** try a full journey in a browser. Can a shopper choose a shirt and finish pretend checkout?
+| Check | Try this | Rule / issue |
+| --- | --- | --- |
+| CHECK-01 | Find product benefit, price, image description and size guide. | AC-10 / #22 |
+| CHECK-02 | Disable JS; read product information and follow the purchase link. Check brand plan. | AC-11 / #22 |
+| CHECK-03 | Select an available size and add it; confirm that exact size. | AC-12 / #23 |
+| CHECK-04 | Try missing and unavailable sizes; read the error and confirm unchanged cart. | AC-13 / #23 |
+| CHECK-05 | Add same/different sizes; try 0, -1, 1.5, text, 1, 10 and 11 as quantities. | AC-14 / #24 |
+| CHECK-06 | Change quantities/remove a line; independently calculate cents and totals. | AC-15 / #24 |
+| CHECK-07 | Remove the last item, then refresh; check empty state and reset behavior. | AC-16 / #24 |
+| CHECK-08 | Read checkout notice and summary; verify no personal/payment fields; try empty cart. | AC-17 / #25 |
+| CHECK-09 | Complete success, inspect confirmation, then try another order on empty cart. | AC-18 / #25 |
+| CHECK-10 | Simulate a problem, check preserved cart, then retry successfully. | AC-19 / #25 |
+| CHECK-11 | Inspect page-source title/description/h1/canonical and audience wording. | AC-20 / #26 |
+| CHECK-12 | Inspect sharing tags and request their absolute page/image URLs. | AC-21 / #26 |
+| CHECK-13 | Follow sample promotion to product; record a classmate’s find-price/action result. | AC-22 / #26 |
+| CHECK-14 | Keyboard, screen reader, focus, labels, contrast and 200% zoom. | NFR-06 / #27 |
+| CHECK-15 | Inspect at 360px and 1280px; record screenshots and asset problems. | NFR-07 / #27 |
+| CHECK-16 | Inspect network requests for no backend/tracking; check console and both scenarios. | NFR-08 / #27 |
+| CHECK-17 | Follow a spec to its issue, files, atomic commit, PR, result and peer decision. | NFR-09 / #27 |
 
-We’ll also try a keyboard and screen reader, check phone layouts, and test failures such as “out of stock” and “payment declined.” [W3C’s accessibility introduction](https://www.w3.org/WAI/fundamentals/accessibility-intro/) explains why these checks matter.
+## Three kinds of test, using this project
 
-> **AI aside · Ask me to show the result.** A list of test names is a plan. It isn’t a passing test run. Ask which command ran, what version it checked, and where you can see the output.
+**Unit:** test the quantity validator or cents calculation in isolation. **Integration:** connect size controls, cart functions, and the displayed total. **End-to-end:** use a browser to complete the whole pretend purchase, including a problem and retry.
+
+Start with these manual checks. As JavaScript is introduced, add small automated assertions for quantity and total rules; browser automation is optional. No database, framework test harness, or coverage percentage is required. Each feature’s checks run before its PR closes, and #27 repeats the whole journey for final review.
+
+> **AI aside · A checklist isn’t evidence.** Ask me to show the actual result and the version I checked. If I couldn’t run something, I must say so.
 {: .callout .ai}
 
-Before merging a feature, run its relevant tests and have someone review it. Before the demo is ready, check the full shopping journey and [quality rules](../specs/non-functional.md). Use made-up data and an isolated test database.
-
-The table below connects test IDs to exact acceptance criteria. **U** means unit, **I** integration, **E** end-to-end, and **Q** quality check.
-
-<details markdown="1">
-<summary>Optional: test cases, proposed tools, and evidence</summary>
-
-## Layers and cases
-
-| Test ID | Layer / acceptance | Essential cases |
-| --- | --- | --- |
-| U-01 / I-01 / E-01 | Unit filter policy / catalog DB+HTTP / browser; AC-01–02 | Active cards, same-variant AND filters, clear, empty, loading and retry |
-| U-02 / I-02 / E-02 | Unit variant policy / detail+cart HTTP / browser; AC-03–04 | Size guide, nonexistent/inactive product, missing/zero-stock combination and valid add |
-| U-03 / I-03 / E-03 | Unit quantity/money / persistent cart HTTP+DB / browser; AC-05–06 | Quantities 0,1,10,11,fraction; merge/remove; integer totals; expired vs retained cart; tampered prices, stale versions, changed-price acknowledgment, stock correction |
-| U-04 / I-04 / E-04 | Unit validation/quote / transactional checkout / browser; AC-07–09 | Invalid contact/state/ZIP, empty/stale cart, explicit consent, zero-cost demo totals, success/decline, expired quote, price/stock race, rollback, identical retry, changed-key payload, unauthorized confirmation |
-| Q-01 | Accessibility automated + manual; NFR-01 | Named controls, keyboard flow, screen-reader announcements, contrast, focus, 200% zoom and reflow |
-| Q-02 | Security integration + review; NFR-02 | Forged prices, cross-session access, Origin rejection, injection strings, cookie flags, redaction, 10/minute boundary and recovery |
-| Q-03 | Browser/layout/performance; NFR-03 | All three widths, three cold production-build runs and gzip JS measurement |
-| Q-04 | Real DB concurrency/failure injection; NFR-04 | Two sessions buy last unit; concurrent identical/different-key retries; transaction rollback |
-| Q-05 | CI + human review; NFR-05 | Module boundaries, typecheck/lint/audit, traceability completeness and release findings |
-
-Unit tests target meaningful pure rules. Integration tests use isolated real PostgreSQL with migrations and deterministic fixtures; reset state per test and freeze time for quote/cart expiry. Mock the PaymentPort at the adapter boundary, not persistence or transaction behavior. E2E uses a running application, isolated seed and browser sessions. Include catalog failure recovery and checkout decline/retry journeys, not just success.
-
-## Proposed tools and execution policy
-
-After M0, choose pinned Vitest (unit/integration), Playwright (E2E), axe-core (automated accessibility) and Lighthouse (performance). These are proposals; no packages, configuration or workflows are installed during initialization.
-
-On each future PR: typecheck/lint, affected unit/integration tests, and affected E2E smoke journeys. Before M2 acceptance: full suite, production-build performance check, manual accessibility review, dependency/security review and traceability audit. Run Chromium journeys plus Firefox/WebKit smoke checks for the four primary flows. Record real browser versions. Set meaningful coverage thresholds after the first module; no arbitrary percentage replaces boundary and failure testing.
-
-## Evidence and acceptance
-
-For each test ID, store test path and exact test title, command/tool version, environment/build SHA, result and CI/artifact URL in the issue/PR and traceability matrix. Manual evidence records reviewer, date, steps and findings. Redact personal information. A rerun needs new evidence; never equate planned test IDs with executed tests.
-
-M0 validation is document review, link/identifier consistency and confirmation that no application scaffold exists. Application acceptance remains unverified until implementation and real tests exist.
-
-</details>
+For docs-only changes, check Markdown links, front matter, IDs, Pages build, and published content. Never report those as passing storefront tests.

@@ -4,30 +4,14 @@ title: "What \u201cworks well\u201d means"
 
 # What “works well” means
 
-A feature can technically work and still be frustrating to use. These **quality requirements** describe how well the shop should work. Their short label is **NFR**.
+These are quality checks for our browser-only demo. They are planned, not passed. Track the final review in [issue #27](https://github.com/kaw393939/spec-driven-tshirt-website/issues/27).
 
-- **NFR-01 · Accessible:** people can shop using a keyboard or screen reader.
-- **NFR-02 · Safe:** the server checks prices and requests, protects orders, and avoids leaking private data.
-- **NFR-03 · Usable on phones:** pages fit small screens and load within our agreed speed limits.
-- **NFR-04 · Dependable:** failures don’t corrupt orders, and two buyers can’t both get the last shirt.
-- **NFR-05 · Understandable:** code has clear responsibilities, and finished work links back to its rules and tests.
+- **NFR-06 · Accessible:** finish the shopping journey with a keyboard, see focus, identify every control by its label, and understand errors/cart updates with a screen reader. Don’t use color alone. Check text contrast against WCAG AA guidance and reflow at 200% zoom. Use [MDN’s accessible HTML guide](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML). Record manual findings; this checklist alone is not a full WCAG conformance claim.
+- **NFR-07 · Phone-friendly:** at 360px and 1280px widths, page content fits without horizontal page scrolling; controls remain usable and images stay within their containers. Record a screenshot at each width. Optimize images and check for missing/slow assets; a Lighthouse score is optional feedback, not a required target.
+- **NFR-08 · Honest and predictable:** no backend, database, external checkout, tracking scripts, personal/payment fields, or shared-stock claims. JavaScript handles invalid quantities and both checkout scenarios without an uncaught error. Refresh starts fresh, as the spec states. Client-side data is editable and is not secure commerce infrastructure.
+- **NFR-09 · Explainable:** keep HTML/CSS/JS responsibilities clear. Each completed story links its spec, issue, focused commit, PR and actual check results. Mark unrun checks honestly; include a peer question and the decision it led to.
 
-> **Example · A real check** Try the checkout without a mouse. Can you reach every field, see where focus is, and understand an error? That’s more useful than saying “make it accessible.”
+> **Try it:** hand the page to a classmate. Can they choose a size, find the price, and explain what will happen when they click the order button?
 {: .callout .concept}
 
-[Start with W3C’s accessibility guide](https://www.w3.org/WAI/fundamentals/accessibility-intro/). The detailed checklist below retains our exact targets, including WCAG 2.2 AA, performance limits, and security checks. We have not met or tested them yet.
-
-<details markdown="1">
-<summary>Optional: measurable quality targets and checks</summary>
-
-| ID | Acceptance requirement | Verification |
-| --- | --- | --- |
-| NFR-01 Accessibility | Target WCAG 2.2 AA across catalog, detail, cart and checkout. Keyboard-only completion, visible/unobscured focus, named controls, error associations and announced cart updates. No unresolved A/AA failures in reviewed journeys. | Q-01: automated accessibility scan plus manual keyboard, zoom/reflow, contrast and screen-reader checks; automation alone is insufficient. |
-| NFR-02 Security/privacy | Server validates inputs/prices/ownership; cookie is HttpOnly, Secure on HTTPS and SameSite=Lax; validate Origin on mutations. No credentials, card data or real customer data in repo/logs. Checkout limited to 10 submissions/minute/session (429 thereafter). Unauthorized order access returns 404. | Q-02: negative integration tests for forged prices, cross-session access, cross-origin mutations, injection strings, limiter boundary, and secret/log review. |
-| NFR-03 Responsive performance | Core flows at 360px, 768px and 1440px without horizontal overflow. On a documented production build, seeded catalog of 12 products: median of 3 cold mobile Lighthouse runs has LCP ≤2.5s and CLS ≤0.1; initial catalog JS ≤200 KiB gzip. | Q-03: save tool/browser versions, throttling settings, machine/build and raw reports. Budget miss requires remediation or explicit spec change. |
-| NFR-04 Reliability | Transaction rollback preserves order/inventory consistency; no overselling under two concurrent last-unit purchases; 24-hour retry window creates at most one order per key/cart. User-visible errors offer recovery. | Q-04: concurrent and failure-injection integration tests against isolated PostgreSQL. |
-| NFR-05 Maintainability/traceability | Module boundaries respected; every completed AC/NFR links to issue, PR, implementation commit and evidence. No unresolved critical/high security findings; dependency findings reviewed for each release. | Q-05: human architecture/traceability review plus typecheck, lint, dependency audit and required test results. |
-
-The accessibility target refers to [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/). This is a planned verification scope, not a present conformance claim. No availability SLA is promised for an educational local demo.
-
-</details>
+[See CHECK-14–17](../docs/testing-strategy.md). The earlier server/security/performance requirements are retired, not silently relaxed; [history](../docs/changes.md).

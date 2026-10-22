@@ -4,24 +4,22 @@ title: "Before we start coding"
 
 # Before we start coding
 
-**We’re reviewing the plan. The shop is not approved for coding yet.** Publishing these docs is allowed so everyone can read and discuss them.
+**The new direction is agreed; the revised specifications still need review.** We call that first checkpoint **M0**. Publishing these docs is allowed so everyone can participate.
 
-The repository owner or instructor makes the approval decision. We call this first milestone **M0**. A milestone is simply a checkpoint with a clear goal.
+The owner/instructor checks:
 
-## What do we need to agree on?
+- [ ] Scope/persona/task list accepted (#2): one product, sizes, browser-only demo.
+- [ ] Student audience/brand/design/persuasion decisions recorded (#21) and reviewed (#3).
+- [ ] HTML/CSS/JS plan and local data rules reviewed (#4).
+- [ ] Shopper checks, quality checks, collaboration and evidence reviewed (#5).
+- [ ] Peer questions and requested revisions resolved; #2–#5 closed with human review evidence.
+- [ ] Approver records name, date, PR link and exact reviewed commit in [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).
+- [ ] [Planning PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12) merged; #1/M0 completed.
+- [ ] Eligible tasks #22–#27 unblocked while keeping their other dependencies.
 
-- [ ] [The project and task list](product-plan.md) make sense — review issue #2.
-- [ ] [The brand](brand-strategy.md) fits our audience — #3.
-- [ ] [The technical plan](../specs/architecture.md) is workable — #4.
-- [ ] [The rules and tests](testing-strategy.md) are clear — #5.
-- [ ] Requested changes are resolved, and #2–#5 are closed with human review evidence.
-- [ ] The approver records their name, date, PR link, and exact reviewed commit in [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).
-- [ ] [Planning PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12) is merged; issue #1 and M0 are completed.
-- [ ] Eligible coding tasks are unblocked, keeping their other dependencies.
-
-> **Why record a commit?** It identifies the exact version someone reviewed. If the plan changes after signoff, the changed version needs a new review.
+> **Why record a version?** The approval applies to what someone actually reviewed. If that version changes after signoff, review the changes again.
 {: .callout .concept}
 
-**The proposed choices:** Threadform/Creator branding; a US-dollar demo with fictional US addresses; one TypeScript application, PostgreSQL, and pretend payments. See [the technical plan](../specs/architecture.md) before agreeing.
+No backend, database, real payment, data collection, or catalog is part of this plan. Brand choices belong to students; Threadform/Creator is only an example. Approval name, date, and reviewed version are **pending**, not invented here.
 
-Approval is **pending**. The name, date, and reviewed version will be recorded in issue #1; we won’t invent them here.
+[Start the student activity](activity.md) · [See the scope change](changes.md).

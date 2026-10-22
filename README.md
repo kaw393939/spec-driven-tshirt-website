@@ -1,40 +1,25 @@
-# Spec-Driven T-Shirt Website
+# One product. A shared spec. A browser-only shop.
 
-An educational e-commerce project demonstrating AI-assisted, specification-driven development and Agile delivery.
+An intro web-development assignment: design a T-shirt page with size choices, use branding and ethical persuasion, and guide AI with specifications you can explain and check.
 
-**Status: planning proposed; human approval pending. No application has been implemented.**
+**[Open the student hub](https://kaw393939.github.io/spec-driven-tshirt-website/docs/)** · **[Today’s activity](https://kaw393939.github.io/spec-driven-tshirt-website/docs/activity.html)**
 
-Start with the [documentation index](docs/README.md), [specifications](specs/README.md), and [approval checklist](docs/approval.md).
+## The assignment
 
-## First milestone: approve before coding
+One product, different sizes, HTML/CSS/plain JavaScript, and a simulated cart/checkout. GitHub Pages serves the files. No backend, database, real payment, or personal-data collection.
 
-The repository owner/instructor must approve the planning PR and record the reviewed commit SHA in [approval issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1). Merge the approved planning PR and complete M0 before starting application code. All brand and technology choices below are proposals.
+Students decide the audience, archetype, visual direction, two Cialdini applications, and how people will discover/share the page. They write checks, get peer feedback, review AI’s changes, and link each spec to its issue, commit, PR, and result.
 
-## Documentation website
+**Status: revised planning baseline; human approval pending. No storefront implementation yet.** The root homepage is still a blank placeholder with a Documentation footer link.
 
-[Project homepage](https://kaw393939.github.io/spec-driven-tshirt-website/) · [Browse documentation](https://kaw393939.github.io/spec-driven-tshirt-website/docs/)
+## Where to start
 
-GitHub Pages renders the same Markdown in `docs/` and `specs/`. The homepage contains only a footer link to documentation. Publishing these proposals does not approve them or authorize application coding.
+- Students: [activity](docs/activity.md), [worked example](docs/example.md), [help](docs/learn.md).
+- Contributors/agents: [AGENTS.md](AGENTS.md), then [CONTRIBUTING.md](CONTRIBUTING.md).
+- Reviewers: [scope](docs/product-plan.md), [shop rules](specs/functional.md), [approval](docs/approval.md).
 
-Pages currently publishes the `docs/1-planning-baseline` branch from `/` so the unapproved baseline can be reviewed. After M0 approval and merge, change the Pages publishing branch to `main` in repository Settings → Pages.
+`docs/` contains student activities and planning. `specs/` defines observable behavior and the browser data plan. `.github/` contains issue/PR templates. Application code is not scaffolded.
 
-## Proposed MVP
+The full plan and Pages publishing source are on `docs/1-planning-baseline`, proposed in [PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12). `main` has the agent guide. After M0 approval/merge, switch Pages to `main`. Verify [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1) before coding. See [what changed](docs/changes.md) for retired backend requirements.
 
-Threadform: expressive T-shirts for creative students and early-career makers. Browse products, select size/color, manage a cart, and complete a clearly labeled sandbox checkout. No real payments or fulfillment.
-
-## Repository map
-
-| Path | Purpose |
-| --- | --- |
-| `docs/` | Personas, epics, backlog, brand, workflow, testing, approval and traceability |
-| `specs/` | Functional and quality requirements, architecture, data/API contracts |
-| `.github/` | Issue and PR templates |
-| `AGENTS.md` | Guardrails for AI-assisted contributions |
-
-Application and test directories are planned in [architecture](specs/architecture.md); scaffolding waits for approval. There are no application dependencies, install commands, or runnable application tests yet.
-
-## Collaboration
-
-Use an issue → specification → feature branch → atomic commits → reviewed PR → acceptance evidence. New agents start with [AGENTS.md](AGENTS.md); contributors should read [CONTRIBUTING](CONTRIBUTING.md). Documents define intended behavior; GitHub Issues track delivery and review. Never treat an AI-generated draft as approved.
-
-[Issues](https://github.com/kaw393939/spec-driven-tshirt-website/issues) · [Milestones](https://github.com/kaw393939/spec-driven-tshirt-website/milestones)
+[Issues](https://github.com/kaw393939/spec-driven-tshirt-website/issues) · [Task list](docs/backlog.md) · [Follow the evidence](docs/traceability.md)

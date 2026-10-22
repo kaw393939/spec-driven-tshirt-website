@@ -5,21 +5,16 @@ permalink: /specs/
 
 # The shop rules
 
-A spec tells us what to build. You can review the shopper experience without reading database tables or knowing a programming language.
+These are the proposed rules for **one product with sizes**. The browser handles the shopping simulation; there is no backend.
 
-## Start with behavior
+- [What should happen?](functional.md) — five small shopper stories with checks.
+- [What should work well?](non-functional.md) — keyboard, phone, privacy, and predictable behavior.
+- [How do the pieces fit?](architecture.md) — HTML, CSS, JavaScript, and GitHub Pages.
+- [What does JavaScript remember?](contracts.md) — a small reference for product and cart data.
 
-- **[What the shop should do](functional.md):** browse → choose → cart → pretend checkout.
-- **[What “works well” means](non-functional.md):** usable, safe, fast, and dependable.
-
-## Then look under the hood
-
-- **[How the pieces fit](architecture.md):** what the browser, server, and database each do.
-- **[Data and request details](contracts.md):** the field names and messages future code will use. Optional on your first read.
-
-> **Example · Make a rule testable** “The cart is good” is hard to check. “A quantity of zero shows an error and leaves the cart unchanged” gives us something we can try.
+> **A spec is a shared agreement.** “The cart is good” is vague. “Removing the last item shows an empty-cart message and a zero total” gives everyone the same result to check.
 {: .callout .concept}
 
-Labels such as **AC-05** are bookmarks for the team. They let us point to one exact rule in an issue or test. Keep them stable when editing. See the [glossary](../docs/learn.md) and [how we connect the work](../docs/traceability.md).
+Start with [the worked example](../docs/example.md). Labels like AC-12 are bookmarks that connect the spec to an issue, commit, and check. [Earlier backend IDs are retired](../docs/changes.md); don’t reuse them.
 
-These rules are still proposals. [Review them before coding](../docs/approval.md).
+Coding waits for [approval](../docs/approval.md).

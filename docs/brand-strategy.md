@@ -1,36 +1,41 @@
 ---
-title: "Our brand"
+title: "Choose your brand and visual design"
 ---
 
-# Our brand
+# Choose your brand and visual design
 
-**Threadform** is our working name. The audience is creative students and early-career makers who want expressive, easy-to-wear T-shirts. The name and audience still need review.
+Your brand is a set of choices you can explain. **Threadform / Creator is an example, not a required answer.** Decide your own identity before asking AI to style the site.
 
-## Give the brand a personality
+## Make three decisions
 
-We chose the **Creator archetype**: a familiar character built around making things and expressing yourself. It helps us choose a consistent voice and look.
+- **BR-01 · Audience and promise:** describe one shopper, their need, your product’s benefit, and a working brand name.
+- **BR-02 · Personality and appearance:** choose an archetype; write a headline and button label; choose colors, type, imagery, and a page sketch. Explain how two visual choices support the brand.
+- **BR-03 · Ethical persuasion:** choose two Cialdini principles. Say where each appears, why it helps this shopper, and how you’ll keep it honest.
 
-Our voice: curious, friendly, and direct. Our headline: **“Wear what you make of the world.”** Buttons should say what happens: “Explore the collection,” “Add to cart,” and “Place demo order.”
+Record these in [issue #21](https://github.com/kaw393939/spec-driven-tshirt-website/issues/21). A classmate asks one question; record your revision or reason for keeping the choice.
 
-The proposed look uses ink `#18212B`, warm paper `#FAF7F0`, orange `#B83A16`, and teal `#0B6660`; readable system fonts; roomy spacing; and clear product photos. Check contrast for each color pairing and never rely on color alone. Artwork and logos come later.
+## Use the vocabulary from class
 
-## Persuasion without tricks
+For a **modernist direction**, you might explore grids, hierarchy, restraint, and clear function. For a **postmodernist direction**, you might explore expressive type, unexpected combinations, playful references, or broken grids. These are design prompts, not complete definitions of either movement. Use your course examples, and explain the choice rather than just naming a style. A mixture is fine when you can justify it.
 
-Cialdini describes [seven principles of persuasion](https://www.influenceatwork.com/7-principles-of-persuasion/). Here is how we might use them responsibly:
+> **Try it:** “Our Creator brand uses an unexpected headline arrangement to suggest experimentation. The price and size controls stay easy to find.”
+{: .callout .concept}
 
-| Idea | Our example |
+## Persuasion ideas to consider
+
+| Cialdini principle | A possible use |
 | --- | --- |
-| Reciprocity: offer something useful | A free fit and care guide (AC-03). |
-| Consistency: support a person’s choices | Keep their cart, and let them change it (AC-05–06). |
-| Social proof: learn from others | Real, consented reviews later; none invented now. |
-| Authority: show trustworthy knowledge | Accurate materials and measurements (AC-03). |
-| Liking: be approachable | Friendly copy and an honest creative process. |
-| Scarcity: show real limits | Mark unavailable sizes from actual stock (AC-04). |
-| Unity: create shared belonging | Welcome people who enjoy making things. |
+| Reciprocity | A helpful fit guide without signup. |
+| Consistency | Let shoppers review and edit their choices. |
+| Social proof | Only real, permissioned evidence; omit reviews if none exists. |
+| Authority | Clear, accurate product information. |
+| Liking | A friendly voice that fits the audience. |
+| Scarcity | Explain simulated size availability honestly; never fake urgency. |
+| Unity | Language that welcomes a shared interest. |
 
-> **AI aside · Keep me honest.** I can write convincing testimonials or sustainability claims. We should only publish claims we can support. Our fictional demo content must be labeled, and fake reviews or countdowns don’t belong here.
+[Read Cialdini’s explanation](https://www.influenceatwork.com/7-principles-of-persuasion/). The applications above are suggestions, not claims of sales results.
+
+> **AI aside · Ask for alternatives.** “Show two visual directions for our archetype and explain the tradeoffs.” Choose one yourself and record why. Don’t let me invent reviews, certifications, product claims, or research.
 {: .callout .ai}
 
-Before release, compare product copy with its source data and check stock messages. We haven’t researched the audience, cleared the name, or shown that these choices improve sales.
-
-**Try this:** does the Creator personality match the shirts you imagine us selling?
+**Hand in:** a small brand board, your page sketch, two persuasion choices, and your reasons. Then plan [how people will find the page](marketing.md).

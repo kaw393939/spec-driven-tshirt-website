@@ -4,71 +4,32 @@ title: "How the pieces fit"
 
 # How the pieces fit
 
-We propose **one application and one database**. Keep the project small enough to understand, with clear parts inside it.
+**ADR-002 · Proposed decision: use HTML, CSS, and plain JavaScript on GitHub Pages.** No framework, backend, database, application API, or package installation is needed for this assignment.
 
-1. **Browser:** shows shirts, forms, and the cart.
-2. **Server:** checks requests, prices, and stock. The browser cannot decide what a shirt costs.
-3. **Database:** remembers products, carts, and orders.
+## Three jobs
 
-## Give each part one job
+- **HTML:** product information, headings, links, labels, controls, and search/sharing metadata.
+- **CSS:** brand appearance, layout, responsive behavior, and visible focus.
+- **JavaScript:** selected size, cart quantities/totals, and the pretend-order result.
 
-**Catalog** finds shirts. **Cart** manages selections. **Checkout** checks the order. **Orders** remembers what was bought. A **sandbox payment adapter** pretends a payment succeeded or failed, without contacting a payment company.
+GitHub Pages serves those files. The browser displays them and runs JavaScript. No order is sent to a server.
 
-Proposed tools: TypeScript for code, Next.js/React for pages and requests, and PostgreSQL for stored data. Versions and dependencies will be chosen after approval; nothing is installed yet.
-
-> **New term · Modular monolith** One application with separate sections inside it. Think of one shop with a display area, a basket, and a checkout desk.
+> **Connect to class · Servers and REST** The browser still requests HTML, CSS, scripts, and images over HTTP. In a real store, an API might also provide product data and accept orders. Here we discuss that idea; we do not build an API or pretend local JavaScript is a REST service.
 {: .callout .concept}
 
-> **AI aside · Simpler has a purpose.** I could suggest lots of services and tools. For this class, we want to understand one complete shopping trip before adding more moving parts.
-{: .callout .ai}
-
-Our first architecture decision, **ADR-001**, is still pending. [MDN’s client/server overview](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview) is a useful next read. The optional notes explain the proposed code boundaries, alternatives, and risks.
-
-<details markdown="1">
-<summary>Optional: architecture decision and implementation notes</summary>
-
-## Decision and tradeoffs
-
-Propose a TypeScript modular monolith: Next.js/React presentation and HTTP handlers, application services, domain policies, and PostgreSQL repositories behind interfaces. One application and one database keep student setup and transactions understandable. Choose and pin supported runtime/framework versions after M0; no dependencies are installed now.
-
-Alternative: a separate SPA/API increases deployment and contract overhead for this scope. An external commerce platform hides learning objectives. Local static storage cannot demonstrate concurrent inventory and order transactions. Revisit the decision if independent deployment or real fulfillment becomes necessary.
-
-## Boundaries and patterns
-
-| Module | Responsibility | Pattern |
-| --- | --- | --- |
-| Catalog | Product/variant reads, matching and availability | Repository for persistence; query service |
-| Cart | Session-bound lines, expiry, server totals and validation | Application service + pure pricing/quantity policies |
-| Checkout | Quote validation, idempotency, order/inventory transaction | Application service orchestrates transaction/unit of work |
-| Orders | Immutable line snapshots and session-scoped confirmation | Repository and ownership policy |
-| Sandbox | Local deterministic success/decline simulation | PaymentPort adapter; no external provider or card fields |
-| UI | Pages, semantic forms and interaction state | Composition of reusable view components |
-
-UI calls application services through handlers; services depend on domain policies and repository/payment interfaces. Infrastructure implements these interfaces. Keep SQL, cookies and framework request types out of domain rules. Inject dependencies at application composition. No microservices, message queue, event bus or generalized abstraction framework.
-
-Browser → HTTP handler (validation/session/Origin) → application service → domain policy → repository → PostgreSQL. PaymentPort returns a deterministic local result before a short database transaction. Stock and quote are rechecked inside that transaction before order creation. No network payment side effects exist in this MVP.
-
-## Planned structure (create after approval)
+## A small planned structure
 
 ```text
-src/
-  app/                      # routes and thin request handlers
-  modules/
-    catalog/{domain,application,infrastructure}/
-    cart/{domain,application,infrastructure}/
-    checkout/{domain,application,infrastructure}/
-    orders/{domain,application,infrastructure}/
-  shared/{ui,validation}/
-tests/{unit,integration,e2e}/
-db/{migrations,seeds}/
+index.html         # product page, after approval
+assets/styles.css  # shop styling, after approval
+assets/app.js      # shop behavior, after approval
+assets/images/     # product and sharing images, after approval
 ```
 
-No source, tests or database directories are scaffolded during M0. Small shared utilities require actual cross-module use; avoid a shared business-logic dumping ground.
+These storefront files do not exist yet. The current index.html remains the footer-only placeholder, and assets/docs.css belongs to the documentation site. Keep docs assets separate from future shop assets.
 
-## Operational boundary and risks
+Begin with functions for `addItem`, `setQuantity`, `removeItem`, `calculateTotal`, and `renderCart`. Test the money/quantity rules independently, then connect buttons and the page. Split JavaScript files only when it makes the code easier to explain.
 
-After approval: local development/test PostgreSQL, deterministic synthetic seed, separate test database, environment-based secrets ignored by Git, structured logs with request IDs and redacted contact/session data. No deployment in this initialization. Sandbox demo contact data expires after seven days; carts expire after seven days of inactivity; an explicit scheduled cleanup task is required before shared demo hosting.
+**Tradeoff:** browser memory is simple, but refresh resets it and visitors can edit the data. That is appropriate for a labeled classroom simulation. Optional browser persistence needs a separate spec and safe handling of missing/corrupt data; no personal data should be stored.
 
-Risks: scope creep → exclusions/change control; inventory races → conditional updates and transaction tests; hallucinated requirements → human signoff; premature abstraction → small module interfaces; brand assumptions → usability review; real commerce mistaken for demo → persistent checkout disclaimer.
-
-</details>
+See [the data notes](contracts.md). ADR-001 and the former server architecture are [retired](../docs/changes.md).

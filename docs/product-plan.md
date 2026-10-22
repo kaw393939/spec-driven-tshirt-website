@@ -1,40 +1,35 @@
 ---
-title: "What we\u2019re building"
+title: "The assignment"
 ---
 
-# What we’re building
+# Build a one-product shop
 
-A small T-shirt shop called **Threadform**. It is a learning project: people will browse shirts, choose a size and color, use a cart, and place a **pretend order**.
+**The goal:** use a written plan to direct AI, then show that the result follows your decisions.
 
-## The first version
+Your website sells one T-shirt with size choices. Shopping runs in the browser using **HTML, CSS, and plain JavaScript**. GitHub Pages hosts the files. Purchases are pretend.
 
-Browse → choose a shirt → add it to a cart → try checkout → see confirmation.
+## What you’ll make
 
-We’ll use fictional products, US demo addresses, and US dollars. Checkout will clearly say that no money is charged and nothing is shipped. Use made-up contact details.
+1. **A product page:** images, benefits, price, size guide, and a clear buying action.
+2. **A shopping simulation:** choose a size, use a cart, and place a demo order.
+3. **A discoverable page:** useful search information, a sharing preview, and one sample promotion.
 
-Accounts, reviews, coupons, real payments, an admin area, tracking, and international shopping can wait. We’re also not deploying a real shop yet.
+No catalog, filters, color options, account system, backend, database, real payment, tracking service, or personal-data collection. Remembering a cart after refresh is an optional later exercise, not a requirement.
 
-> **New term · MVP** “Minimum viable product” means the smallest useful first version. For our class, that’s one complete practice shopping trip.
-{: .callout .concept}
+## Start with a person
 
-## Who are we designing for?
+Describe one likely shopper in two sentences: what do they care about, and what might stop them buying? That is your **persona**, not a claim that you interviewed someone.
 
-- **Maya, a student:** shops on her phone and wants to understand fit and total cost.
-- **Jordan, a maker:** wants to find a design in an available size and color quickly.
-- **Alex, a keyboard and screen-reader user:** needs clear labels, visible focus, and useful feedback.
-- **Our class reviewer:** needs to understand what we decided and how we checked it.
+Example: “Maya wants a shirt that expresses her interest in making things. She shops on her phone and worries about fit.” Also consider someone using a keyboard or screen reader.
 
-These are **personas**: example people who help us think about needs. They are assumptions, not people we interviewed. After approval, we’ll try the design with three representative users and update the plan from what we learn.
+## What you’ll hand in
 
-## Four chunks of work
+- A short brand/design plan and a page sketch, with reasons.
+- A spec issue with checks, a peer question, and your response.
+- After approval: a working demo and links from the spec to commits, PR, and check results.
 
-An **epic** is a big goal containing smaller tasks:
+We’ll look for choices you can explain, a revision you made from feedback, and evidence that the page works.
 
-1. **EP-01:** agree on the plan ([review checklist](approval.md)).
-2. **EP-02:** help people find and choose shirts (US-01–02).
-3. **EP-03:** make the cart and pretend checkout work (US-03–04).
-4. **EP-04:** check usability, safety, and correctness (NFR-01–05).
+The big goals (**epics**) are EP-05: decide the brand; EP-06: build one shopping journey; EP-07: help people discover it and check the result. [See the tasks](backlog.md).
 
-We’re successful when the [shop rules](../specs/functional.md) pass their checks on phone and desktop, important quality problems are fixed, and we can show the work that supports each result.
-
-**Next:** [Read the shop rules](../specs/functional.md).
+**Next:** [Write your first spec](activity.md).

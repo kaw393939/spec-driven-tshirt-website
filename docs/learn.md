@@ -1,33 +1,37 @@
 ---
-title: "Small glossary and useful links"
+title: "Get help"
 ---
 
-# Small glossary and useful links
+# Get help
 
-You don’t have to memorize these. Come back when a term gets in your way.
+Stuck? Start with [the size-selector example](example.md). Use these words when you need them; you don’t have to memorize the table.
 
-| Term | Plain meaning | Our example |
-| --- | --- | --- |
-| Spec | What we agree the website should do | A shopper can remove a cart item. |
-| Persona | An example person we design for | Maya shops on her phone. |
-| Epic | A big goal made of smaller tasks | Help shoppers choose a shirt. |
-| User story (US) | A need written from a user’s perspective | “As a shopper, I want a size guide so I can choose a fit.” |
-| Acceptance criterion (AC) | A check that tells us whether a feature works | An unavailable size cannot be added. |
-| Backlog | A list of work in order | Review first, then catalog, cart, checkout. |
-| NFR | A quality rule, such as accessibility or speed | Checkout works with a keyboard. |
-| API | The agreed way software parts ask each other for things | The page asks the server for products. |
-| Sandbox | A safe practice setting | Checkout never charges money. |
-| Traceability | Being able to follow a decision through the work | Rule → issue → change → test. |
+| Word | Plain meaning |
+| --- | --- |
+| Spec | The shared description of what to build. |
+| Persona | An example shopper and their needs. |
+| Archetype | A character pattern used to give a brand personality. |
+| User story (US) | A need from a shopper’s point of view. |
+| Acceptance criterion (AC) | A specific result we can check. |
+| Backlog / milestone | The task list / a checkpoint. |
+| Atomic commit | One focused, named change. |
+| Traceability | Following a rule to the change and check that support it. |
+| Discoverability | How people find the page. |
+| Simulation | Practice behavior with no real purchase. |
+| AGENTS.md | Standing project instructions for an AI helper. |
+| REST / API | Concepts for requests between software parts; no application API is required here. |
 
-> **AI aside · Ask for an example.** If an explanation is confusing, try: “Explain that with one T-shirt and one shopper.” You can also ask me what I assumed or what might go wrong.
+> **Ask AI:** “Explain this with one shirt and one shopper.” Or: “Ask me questions before suggesting code.”
 {: .callout .ai}
 
 ## Read a little more
 
-- [User stories — Agile Alliance](https://agilealliance.org/glossary/user-stories/): why we write needs from a user’s point of view.
-- [GitHub flow — GitHub Docs](https://docs.github.com/en/get-started/using-github/github-flow): follow a change from branch to review to merge.
-- [Introduction to web accessibility — W3C](https://www.w3.org/WAI/fundamentals/accessibility-intro/): understand who accessible design helps and why.
-- [Client and server overview — MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview): learn how a browser and a server work together.
-- [Cialdini’s persuasion principles — Influence at Work](https://www.influenceatwork.com/7-principles-of-persuasion/): the ideas behind our brand discussion.
+- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow) — branches, commits and PRs.
+- [User stories](https://agilealliance.org/glossary/user-stories/) — describe a user’s need.
+- [Accessible HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/HTML) — labels, structure and keyboard use.
+- [Google’s search starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) — understandable search basics.
+- [Open Graph](https://ogp.me/) — sharing metadata.
+- [Cialdini’s principles](https://www.influenceatwork.com/7-principles-of-persuasion/) — connect persuasion to honest choices.
+- [Official AGENTS.md guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md) — how Codex reads project instructions.
 
-**Try this:** pick one shop rule, write a user story for it, then suggest a check that would show whether it works.
+For archetypes and modernism/postmodernism, start with the examples from class. In [the brand activity](brand-strategy.md), explain a concrete choice rather than relying on a style label.

@@ -1,72 +1,36 @@
 ---
-title: "Data and request details"
+title: "What JavaScript remembers"
 ---
 
-# Data and request details
+# What JavaScript remembers
 
-This page is a reference for when we start coding. You can skip the field names on your first visit.
+This is a small **data agreement**, not an API contract. Names below guide future JavaScript; no implementation is included now.
 
-A **data model** describes what we remember. An **API contract** describes what one part of the application can ask another part to do.
+## One product
 
-- A **product** is a shirt design.
-- A **variant** is one size/color combination.
-- A **cart** holds the shopper’s choices.
-- A **quote** is the total shown before the shopper agrees to order.
-- An **order** records a completed pretend purchase.
+| Name | Meaning | Example |
+| --- | --- | --- |
+| `id` | A stable product label | `maker-tee` |
+| `name` | The product name | `Maker Tee` |
+| `priceCents` | Whole-number USD cents, shared by every size | `2000` means $20.00 |
+| `sizes` | Allowed sizes and simulated availability | S available, M available, L unavailable, XL available |
 
-## Two rules worth understanding now
+The brand name, sizes, price, copy and images are student decisions documented before coding. The values above are fictional examples. Availability is local demo data, not shared inventory. No color selector or stock decrement is required.
 
-**Keep money exact:** store $19.99 as 1999 cents, not an approximate decimal.
+## A little browser state
 
-**Avoid duplicate orders:** if someone retries the same checkout request, return the same result instead of buying twice. The technical name is **idempotency**.
+- `selectedSize`: starts empty; must match an available size.
+- `cart`: a list of `{size, quantity}` items. One line per size; quantity is an integer 1–10.
+- `scenario`: `success` or `problem`, explicitly labeled demo controls.
+- `confirmation`: an in-memory snapshot of a successful cart and its total, with a clearly simulated reference.
 
-> **AI aside · What if someone clicks twice?** That’s the kind of question a spec should answer before I write checkout code. We also need a plan for two people buying the last shirt at the same time.
+Use the product’s `priceCents` to calculate totals. Don’t accept a price from a form input. This keeps calculations consistent; it is not a security boundary against browser editing.
+
+**Line total = priceCents × quantity. Total = sum of line totals.** Demo shipping and tax are zero. Format the final cents as USD.
+
+Validate additions/updates before changing state. An invalid action leaves the cart unchanged. Success copies the cart into confirmation, then empties the cart; a simulated problem keeps it. Refresh resets the cart and confirmation.
+
+> **AI aside · No secret machinery.** You should be able to point to the variable that remembers a size and the function that changes a total. If my solution needs a database or server account, it is outside this assignment.
 {: .callout .ai}
 
-The details below keep the exact field names, request paths, validation rules, and stock protections. These are proposed contracts, not existing endpoints.
-
-<details markdown="1">
-<summary>Optional: full data and API reference</summary>
-
-## Data model
-
-| Entity | Fields / invariants |
-| --- | --- |
-| Product | UUID id; unique slug; name; description; composition; care; size-guide measurements; image URL/alt; active flag; nonnegative priceCents; currency fixed USD |
-| Variant | UUID id; productId FK; unique SKU and (productId,size,color); size enum XS/S/M/L/XL/XXL; color slug/label; integer stock ≥0; version |
-| Cart | UUID id; hash of opaque session token; expiresAt; version; unique lines by variantId with quantity 1–10; last-seen unit price for change notices |
-| Quote | Opaque id; cartId/version; immutable current lines/prices; subtotal/shipping/tax/total cents; normalized shipping/contact; expiresAt = creation + 10 minutes |
-| Order | Opaque UUID reference; owning cart/session; confirmed status; immutable SKU/name/size/color/unit-price/quantity snapshots; totals; synthetic contact/address; createdAt |
-| CheckoutAttempt | Unique (cartId,idempotencyKey); request hash; result/order reference; createdAt; retained 24 hours minimum |
-
-Money: subtotal = sum(quantity × current product priceCents); demo shippingCents = taxCents = 0; total = subtotal. No floating point money. Seed fixture includes available/unavailable variants, a price change and a last-unit race case. Product price applies to all its variants in MVP.
-
-Cookie holds only a cryptographically random token; server stores its hash. Reading an expired cart establishes a new empty cart. Cart expiry extends only on successful mutation. Confirmation must match the owning token, including when the purchased cart is empty. Purge expired carts/quotes and demo orders/contact data after seven days; retain minimal non-personal retry records through the 24-hour guarantee.
-
-## Endpoints
-
-| Method / path | Input | Success |
-| --- | --- | --- |
-| GET `/api/products?size=M&color=ink` | Optional allowed size/color filters | 200 `{items:[productSummary]}`; matching same in-stock variant |
-| GET `/api/products/:slug` | Product slug | 200 `{product,variants,sizeGuide}` |
-| GET `/api/cart` | Session cookie; create if absent/expired | 200 `{cartId,version,lines,totals,warnings,expiresAt}` |
-| POST `/api/cart/items` | `{variantId,quantity,cartVersion}` | 200 updated cart, merged quantities |
-| PATCH `/api/cart/items/:variantId` | `{quantity,cartVersion}` | 200 updated cart |
-| DELETE `/api/cart/items/:variantId` | `{cartVersion}` | 200 updated cart |
-| POST `/api/checkout/quote` | `{cartVersion,acknowledgedPrices,contact,shipping}` | 201 quote including disclaimer and expiry |
-| POST `/api/checkout/orders` | `{quoteId,consent:true,scenario:"success" or "decline"}` plus `Idempotency-Key` header | 201 new confirmation or 200 identical retry |
-| GET `/api/orders/:reference` | Owning session cookie | 200 confirmation snapshot |
-
-`acknowledgedPrices` maps variant IDs to the current unit prices explicitly accepted in the displayed cart; server compares, never trusts, these values. Quote binds cart version, lines, prices and contact/address. Submission rejects expired quotes, changed cart, prices or stock and requires a fresh quote/consent. It never silently changes an approved total.
-
-## Errors, retries and concurrency
-
-Errors: `{error:{code,message,fieldErrors?,requestId}}`; 400 malformed JSON/filter, 404 unknown product/order or wrong owner, 409 stale version/price/quote/stock or reused key with changed payload, 422 invalid quantity/fields/consent or simulated decline, 429 rate limited (Retry-After), 500 unexpected failure with no sensitive details. Cross-origin mutations return 403. All errors are user-readable; do not expose SQL or stack traces.
-
-Checkout looks up an existing attempt before quote/cart validity checks, so an identical retry after cart clearing returns its prior result. Key scope is cart + caller session; request hash includes quote, consent and scenario. Atomically serialize attempts using the unique key; concurrent duplicates wait for/reuse one result. A changed request with the same key is always 409 within retention.
-
-In one transaction: lock cart and affected variants in stable ID order, revalidate quote/version/prices, conditionally decrement sufficient stock, create immutable order and successful attempt result, clear purchased lines, increment cart version, then commit. Roll back all mutations on failure. Store a terminal decline result without inventory/order changes; unexpected rolled-back failures may be retried safely. Concurrent requests with different keys cannot purchase the same cart twice because quote/cart version is checked under lock.
-
-Validation: trim text; email ≤254 chars with basic address syntax; name/street/city nonempty ≤120 chars each; state one of 50 states or DC; ZIP exactly five digits. Accept synthetic US addresses only. SQL is parameterized, output escaped, mutating requests check Origin. No client-submitted totals or raw payment credentials are accepted.
-
-</details>
+Local storage is optional future work. There are no session cookies, account records, REST endpoints, real order records, or cross-user stock guarantees. [Shop checks](functional.md).

@@ -1,73 +1,59 @@
 # Start here, agents
 
-This is an educational T-shirt shop project. Help beginners understand decisions, keep work small, and leave links that another person can follow.
+This is an intro web-development class project. Students know basic Git, brand archetypes, Cialdini, modernism/postmodernism, and conceptual web servers/REST. Help them make decisions they can explain, not just receive a generated website.
 
-## 1. Check the current state
+## Five standing rules
 
-- Repository: `kaw393939/spec-driven-tshirt-website` (public).
-- **Planning is pending approval. Do not implement the shop, install application dependencies, scaffold application code, or deploy an application before M0 passes.**
-- Documentation, its GitHub Pages site, and the footer-only placeholder homepage are authorized before M0. They do not approve the shop.
-- At this handoff, the full plan and Pages source are on `docs/1-planning-baseline`; [PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12) proposes merging the plan into `main`. `main` has bootstrap/onboarding material. Verify branches, Pages settings, [approval issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1), and milestones before relying on this snapshot.
-- Start with `git status --short --branch`. Preserve other people's changes; do not reset, clean, force-push, or overwrite unrelated work.
+1. Read the relevant spec and issue before changing anything.
+2. Ask about unclear requirements; do not silently choose the student’s audience or brand.
+3. Explain the plan and work on one small feature at a time.
+4. Link the spec, issue, atomic commit, PR, and actual check result.
+5. Say what you checked and what you could not check. Never invent evidence or approval.
 
-If this clone is on `main` and the docs are absent, fetch the remote and read the planning branch or the [live hub](https://kaw393939.github.io/spec-driven-tshirt-website/docs/). Base documentation changes on the current Pages source branch. Do not merge PR #12 merely to get the files.
+## Scope and current state
 
-## 2. Read only what you need, in this order
+- **One product with sizes. HTML, CSS, and plain JavaScript. GitHub Pages. All shopping is simulated in the browser.**
+- No backend, database, framework, application API, real payments, accounts, tracking, personal-data fields, catalog, filters, or color variants. Browser cart persistence is optional future work, not required.
+- **Planning is pending M0 approval. Do not implement/scaffold the storefront or install application packages before M0 passes.** Documentation publishing and the footer-only homepage are authorized.
+- Full plan and Pages source are currently `docs/1-planning-baseline`, pending [PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12). `main` has onboarding material. Verify actual branches/Pages and [approval issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1) before acting on this snapshot.
+- Run `git status --short --branch` first. Preserve others’ work. Never reset, clean, force-push or overwrite unrelated changes.
 
-1. `README.md` and `docs/README.md`: project and beginner reading path.
-2. `docs/approval.md`: what is allowed and who approves it.
-3. The assigned GitHub issue: goal, acceptance checks, priority, dependencies.
-4. `docs/development-workflow.md` and `docs/traceability.md`: process and evidence.
-5. Relevant specs in `specs/`, plus `docs/brand-strategy.md` for design/copy and `docs/testing-strategy.md` for checks.
+If docs are absent on `main`, fetch/read the planning branch or [live hub](https://kaw393939.github.io/spec-driven-tshirt-website/docs/). Do not merge the unapproved baseline merely to obtain files.
 
-Documents define intended behavior. Issues track work. PRs and test results show what actually happened. If they disagree, resolve the difference explicitly before implementation; never silently invent a requirement. Personas, brand and architecture remain proposals until approved.
+## Read in this order
 
-## 3. Use one issue-focused branch
+1. README.md; docs/README.md; docs/activity.md and docs/example.md for the student experience.
+2. docs/approval.md, then the assigned issue and its dependencies.
+3. Relevant specs; docs/brand-strategy.md and docs/marketing.md for design/copy decisions.
+4. docs/development-workflow.md, docs/testing-strategy.md, docs/traceability.md.
+5. docs/changes.md if an old issue/ID refers to a catalog or backend. US-01–05, AC-01–09, NFR-01–05, ADR-001 and old automated-test IDs are retired; never reuse them. Active stories are US-06–10, with AC-10–22 and CHECK-01–17.
 
-- Find an existing issue or create one with a clear goal, stable requirement/check IDs, and dependencies before editing.
-- Use `docs/<issue>-<slug>`, `feat/<issue>-<slug>`, `fix/<issue>-<slug>`, or `test/<issue>-<slug>`.
-- While M0 is pending, documentation PRs normally target `docs/1-planning-baseline`. A small onboarding-only PR may target `main`; it must not import or approve the planning baseline.
-- After the plan is approved and merged, use `main` as the normal base and switch Pages to `main`. Verify the actual state instead of assuming this transition happened.
-- Respect blocked tasks. Use the ordered backlog and milestone dependencies; work on one story at a time.
+Docs define the agreement. Issues hold decisions/progress; PRs/checks show delivery. Resolve conflicts explicitly. Threadform/Creator is an example, not a required student brand. Do not mistake a fictional peer exchange for actual review evidence.
 
-## 4. Make atomic, traceable commits
+## Work visibly and atomically
 
-**One commit = one explainable change for one primary issue.** Code, its directly related tests, and its necessary docs may belong together. Split unrelated fixes, formatting, or features. Each commit should be safe to review or revert on its own.
-
-Before committing, inspect the diff and stage specific files or hunks. Do not sweep another person's work into your commit. Run relevant checks; `git diff --cached --check` checks whitespace, not correctness.
-
-Every non-bootstrap commit must reference its issue in the subject and name the affected requirement/check IDs and source document in the body. Example for future application work, after approval:
+- Find/create an issue first. Record goal, spec section, stable rule/check IDs, dependencies, and one peer question/decision where appropriate. Put shared decisions in the spec/issue, not only a private AI conversation.
+- Use `docs/<issue>-<name>` or, after approval, `feat/`, `fix/`, `test/`. Documentation PRs target the current planning/Pages branch; onboarding-only updates may target `main` without importing the baseline.
+- After M0 approval and merge, switch Pages and normal feature bases to `main`. Verify rather than assume. Respect blocked tasks.
+- **One authored change commit = one explainable change for one primary issue.** Include directly related docs/checks with code when coherent; split unrelated cleanup. Inspect the diff and stage specific files/hunks.
+- Reference the issue in the subject and IDs/spec path in the body. Future example (only after approval):
 
 ```text
-feat(cart): reject invalid quantities (refs #8)
+feat: require an available size (refs #23)
 
-Requirements: US-03, AC-05
-Spec: specs/functional.md#us-03--manage-a-cart
+Requirements: US-07, AC-12, AC-13
+Spec: specs/functional.md#us-07--choose-a-size
 ```
 
-For process/documentation work, use its issue acceptance IDs, such as `PROCESS-01`, and the relevant document path. Record actual verification in the PR/issue; do not claim tests ran just because their IDs appear in a commit.
+- For docs/process work, use its issue’s check IDs (for example RESET-01). Merge commits preserve the PR link and primary issue. `refs #N` means ongoing; `Closes #N` is only for a fully satisfied task. Verify closure on non-default branches.
+- Use the PR template: spec link → issue → changed files and actual commit URLs → PR → check evidence. Update docs/traceability.md when mappings change. Record final hashes in issue/PR after committing; don’t repeatedly edit a file to add its own hash.
 
-Keep IDs stable. Proposed behavior changes need spec review before coding. Use `refs #N` while work is in progress; use `Closes #N` only on a PR that fully satisfies the issue. GitHub automatic closing depends on the target branch, so verify the issue state after merging.
+## Verify, then hand off
 
-## 5. Close the traceability loop
-
-For each completed requirement, provide clickable links from the issue/PR to:
-
-- The spec section and requirement/acceptance IDs.
-- The changed file paths and the actual commit SHA(s).
-- The PR and its review/decision.
-- The test IDs, exact test paths/titles and real results; or document/link checks for docs-only work.
-
-Update `docs/traceability.md` in the same change when its mapping changes. Keep application rows unimplemented until code and evidence exist. Record final commit/build SHAs and results in the PR/issue after commit; do not create endless commits just to insert a file's own hash. Keep earlier evidence and distinguish it from current results.
-
-Use `.github/PULL_REQUEST_TEMPLATE.md`. Before closing an issue, verify its checks, links and dependencies. Never treat a docs-only PR as implementation of an application story.
-
-## 6. Verify and hand off honestly
-
-- No application test suite exists at this handoff. After approval, follow the testing strategy: meaningful unit, integration and browser tests tied to acceptance criteria. Report unrun tests as unrun.
-- For docs/site changes: validate front matter, relative links, stable IDs and whitespace; let Pages build; check the published pages and links. Check rendering/accessibility when tools are available and state any verification limits.
-- Keep the homepage footer-only unless the user changes that requirement. Preserve the `/spec-driven-tshirt-website` base path and use existing Markdown as the docs source.
-- M0 requires a human decision for the exact final reviewed SHA, recorded in issue #1, plus the checklist in `docs/approval.md`. Never invent approvals, research, product claims, reviews, tests or evidence.
-- Branch protection and application CI are not configured at this handoff. These instructions and templates are review rules, not automatic enforcement. Verify/configure available controls before application work as described in the workflow.
-- Write in plain language. Explain new terms, use T-shirt examples, and label AI asides. Keep secrets and personal data out of prompts, logs, fixtures and commits. Disclose material AI assistance in PRs.
-- Final handoff: say what changed, link the issue/PR and live result, report checks and limitations, and name any remaining blocker. Leave the checkout clean or explain exactly what remains.
+- No storefront code or tests exist yet. Start with repeatable manual CHECK cases; introduce small JS unit assertions and integration/browser checks as teaching progresses. No database, package test harness, or coverage target is required. A docs build is not a storefront test.
+- Docs changes: check front matter, links, IDs, whitespace, successful Pages build and live content. Inspect rendering/accessibility when tools allow; name verification limits.
+- Keep the root homepage footer-only until the user changes that requirement. Preserve `/spec-driven-tshirt-website` paths. Existing assets/docs.css styles docs, not the future shop.
+- M0 needs a human decision for the exact final reviewed SHA in #1, plus docs/approval.md’s checklist. Student/peer feedback alone is not instructor approval. Later behavior changes need spec review before coding.
+- Branch protection/application CI are not configured; these are instructions and review checks, not automatic enforcement. Automation is not a student prerequisite.
+- Use short activities, plain language and concrete T-shirt examples. Let students explain brand, persuasion and visual choices. Keep claims honest; label demo content; never collect real payment/personal data or claim shared inventory/security from client-side checks.
+- Disclose material AI help. Final handoff links issue/PR/live result, summarizes checks/limits, and names remaining decisions/blockers. Leave a clean checkout or explain remaining changes.
