@@ -1,0 +1,22 @@
+title: Spec-Driven T-Shirt Website
+url: https://kaw393939.github.io
+baseurl: /spec-driven-tshirt-website
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope:
+      path: docs
+    values:
+      layout: document
+  - scope:
+      path: specs
+    values:
+      layout: document
+exclude:
+  - AGENTS.md
+  - CONTRIBUTING.md
+  - README.md

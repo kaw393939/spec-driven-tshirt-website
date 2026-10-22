@@ -1,3 +1,7 @@
+---
+title: "Brand strategy"
+---
+
 # Brand strategy
 
 Status: proposed; BRAND-01 / issue #3. No name clearance or audience research has been performed.

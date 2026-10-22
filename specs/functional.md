@@ -1,3 +1,7 @@
+---
+title: "Functional specification"
+---
+
 # Functional specification
 
 Status: proposed. Common rules and terminology are in [contracts](contracts.md). All prices are integer cents in USD. Seed products and contact details are fictional.

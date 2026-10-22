@@ -1,3 +1,8 @@
+---
+title: "Documentation index"
+permalink: /docs/
+---
+
 # Documentation index
 
 All documents are **proposed**, dated 2026-10-22, until [M0 approval](approval.md).

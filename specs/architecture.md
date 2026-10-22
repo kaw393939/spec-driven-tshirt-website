@@ -1,3 +1,7 @@
+---
+title: "Proposed architecture"
+---
+
 # Proposed architecture
 
 Status: proposed; TECH-01 / #4. **ADR-001: pending approval.**

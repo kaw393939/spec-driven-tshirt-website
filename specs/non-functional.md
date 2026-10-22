@@ -1,3 +1,7 @@
+---
+title: "Quality specification"
+---
+
 # Quality specification
 
 Status: proposed; issue #10. Each requirement applies to relevant feature PRs.

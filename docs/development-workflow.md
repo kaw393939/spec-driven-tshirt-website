@@ -1,3 +1,7 @@
+---
+title: "Development workflow"
+---
+
 # Development workflow
 
 Status: proposed. Issues #1–#5 track review of this planning baseline.
@@ -32,4 +36,4 @@ Approved scope met; relevant tests/checks pass; accessibility/security considera
 
 AI can draft specs, suggest cases and assist implementation after approval. Humans verify output, assumptions and sources. PRs disclose material AI assistance and verification. Never copy secrets or personal records into prompts.
 
-M0 is a procedural gate, not an installed CI control. No branch protection or Actions workflows are configured in this setup. Before first code PR, assess repository plan support and configure main-branch PR review, no force pushes, and required checks once checks exist; document any unavailable controls. Do not claim enforcement until configured. A solo owner unable to self-approve records explicit signoff in #1; independent review is preferred when available.
+M0 is a procedural gate, not an installed CI control. GitHub Pages is configured to build and publish this documentation automatically. No branch protection or application CI workflows are configured in this setup. Before first code PR, assess repository plan support and configure main-branch PR review, no force pushes, and required checks once checks exist; document any unavailable controls. Do not claim enforcement until configured. A solo owner unable to self-approve records explicit signoff in #1; independent review is preferred when available.
