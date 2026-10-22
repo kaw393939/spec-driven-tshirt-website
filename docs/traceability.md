@@ -1,57 +1,40 @@
 ---
-title: "Connecting the dots"
+title: "Follow the evidence"
 ---
 
-# Connecting the dots
+# Follow the evidence
 
-**Traceability** means we can follow a requirement through the work. It helps us answer “Why did we build this?” and “How do we know it works?”
+**Can you show where this change came from?** Follow the spec to an issue, a focused commit, a PR, and a check result. That is traceability.
 
-## One example
+## A future example
 
-Shop rule **AC-05** says shoppers can change their cart. That rule points to [issue #8](https://github.com/kaw393939/spec-driven-tshirt-website/issues/8). Later, its pull request will link to the code change and the tests **U-03, I-03, and E-03**.
+[US-07 / AC-12–13](../specs/functional.md#us-07--choose-a-size) → [issue #23](https://github.com/kaw393939/spec-driven-tshirt-website/issues/23) → future size-selection commit and PR → CHECK-03/04 results.
 
-**Rule → issue → pull request and commit → test result.**
+The commit and results don’t exist yet. [The worked example](example.md) shows what to write without pretending the code is done.
 
-> **AI aside · Follow the links.** If I say a feature is done, you should be able to find the requirement, the change, and a real test result. If one is missing, ask me for it.
+## Current plan
+
+| Rules | Issue | Planned checks | Code / results |
+| --- | --- | --- | --- |
+| BR-01–03 | [#21](https://github.com/kaw393939/spec-driven-tshirt-website/issues/21) | Brand board, reasons, peer question/revision | Student decisions pending |
+| US-06 / AC-10–11 | [#22](https://github.com/kaw393939/spec-driven-tshirt-website/issues/22) | CHECK-01–02 | Not built / not run |
+| US-07 / AC-12–13 | [#23](https://github.com/kaw393939/spec-driven-tshirt-website/issues/23) | CHECK-03–04 | Not built / not run |
+| US-08 / AC-14–16 | [#24](https://github.com/kaw393939/spec-driven-tshirt-website/issues/24) | CHECK-05–07 | Not built / not run |
+| US-09 / AC-17–19 | [#25](https://github.com/kaw393939/spec-driven-tshirt-website/issues/25) | CHECK-08–10 | Not built / not run |
+| US-10 / AC-20–22 | [#26](https://github.com/kaw393939/spec-driven-tshirt-website/issues/26) | CHECK-11–13 | Not built / not run |
+| NFR-06–09 | [#27](https://github.com/kaw393939/spec-driven-tshirt-website/issues/27) | CHECK-14–17 | Not built / not run |
+
+[How to run these checks](testing-strategy.md). PLAN-01 (#2), BRAND-01 (#3), TECH-01 (#4), QA-01 (#5), and GATE-01 (#1) remain pending human review. ADR-002 is part of #4; RESET-01–05 are tracked in [#20](https://github.com/kaw393939/spec-driven-tshirt-website/issues/20).
+
+## When work is finished
+
+Replace “not built/not run” with links to the code/files, actual atomic commit, PR, and evidence in the same feature change. Split rows if checks have different results. Record final version hashes in the issue/PR after committing. Never fill a missing link with invented evidence.
+
+> **AI aside · Follow my claim.** If I say “done,” ask me to show the rule, change, and repeatable result.
 {: .callout .ai}
 
-We haven’t built the shop yet. Dashes below mean “not implemented”; “not run” means exactly that. Keep requirement IDs stable and add real links as work is completed.
+## A real documentation example
 
-## A real example from this project
+[Issue #15](https://github.com/kaw393939/spec-driven-tshirt-website/issues/15) → [PR #16](https://github.com/kaw393939/spec-driven-tshirt-website/pull/16) → [content commit](https://github.com/kaw393939/spec-driven-tshirt-website/commit/becf1653d79425e08d430c49356c06274fee1ed9) and [style commit](https://github.com/kaw393939/spec-driven-tshirt-website/commit/474db627c4d5ecc6144677bf278651f93b0249e3) → [Pages result](https://github.com/kaw393939/spec-driven-tshirt-website/actions/runs/39789989319).
 
-The beginner-friendly rewrite is tracked in [issue #15](https://github.com/kaw393939/spec-driven-tshirt-website/issues/15). It was delivered in [PR #16](https://github.com/kaw393939/spec-driven-tshirt-website/pull/16), with separate commits for [teaching content](https://github.com/kaw393939/spec-driven-tshirt-website/commit/becf1653d79425e08d430c49356c06274fee1ed9) and [layout/styles](https://github.com/kaw393939/spec-driven-tshirt-website/commit/474db627c4d5ecc6144677bf278651f93b0249e3). The issue records the live-link checks and [successful Pages deployment](https://github.com/kaw393939/spec-driven-tshirt-website/actions/runs/39789989319).
-
-Those are **documentation results**, not passing application tests.
-
-## When you finish a task
-
-Link its spec section, issue, changed files, commit URLs, PR, and actual check results. Keep the IDs, such as AC-05, visible in each place. Record final SHAs in the issue/PR after committing so the links identify the version that was checked.
-
-The [atomic commit guide](development-workflow.md#atomic-commits) and PR template explain what to include. New agents start with [AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md).
-
-<details markdown="1">
-<summary>Optional: full requirement-to-test checklist</summary>
-
-| Requirement | AC / review | Issue | Planned tests / evidence | Implementation PR / commit | Execution result |
-| --- | --- | --- | --- | --- | --- |
-| PLAN-01 / EP-01 | Scope/persona/backlog approval | [#2](https://github.com/kaw393939/spec-driven-tshirt-website/issues/2) | Human review | — | Pending |
-| BRAND-01 / EP-01 | Brand and ethical claims approval | [#3](https://github.com/kaw393939/spec-driven-tshirt-website/issues/3) | Human review | — | Pending |
-| TECH-01 / ADR-001 | Architecture/contracts approval | [#4](https://github.com/kaw393939/spec-driven-tshirt-website/issues/4) | Human review | — | Pending |
-| QA-01 | Testability/traceability approval | [#5](https://github.com/kaw393939/spec-driven-tshirt-website/issues/5) | Human review | — | Pending |
-| GATE-01 | M0 checklist and exact-SHA approval | [#1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1) | Approver record | — | Pending |
-| US-01 / EP-02 | AC-01, AC-02 | [#6](https://github.com/kaw393939/spec-driven-tshirt-website/issues/6) | U-01, I-01, E-01 | — | Not run |
-| US-02 / EP-02 | AC-03, AC-04 | [#7](https://github.com/kaw393939/spec-driven-tshirt-website/issues/7) | U-02, I-02, E-02 | — | Not run |
-| US-03 / EP-03 | AC-05, AC-06 | [#8](https://github.com/kaw393939/spec-driven-tshirt-website/issues/8) | U-03, I-03, E-03 | — | Not run |
-| US-04 / EP-03 | AC-07, AC-08, AC-09 | [#9](https://github.com/kaw393939/spec-driven-tshirt-website/issues/9) | U-04, I-04, E-04 | — | Not run |
-| NFR-01 / EP-04 | Accessibility | [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10) | Q-01 | — | Not run |
-| NFR-02 / EP-04 | Security/privacy | [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10) | Q-02 | — | Not run |
-| NFR-03 / EP-04 | Layout/performance | [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10) | Q-03 | — | Not run |
-| NFR-04 / EP-04 | Transactions/retries | [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10) | Q-04 | — | Not run |
-| NFR-05 / EP-04 | Maintainability/traceability | [#10](https://github.com/kaw393939/spec-driven-tshirt-website/issues/10) | Q-05 | — | Not run |
-| US-05 | Deferred scope research | [#11](https://github.com/kaw393939/spec-driven-tshirt-website/issues/11) | Future spec review | — | Deferred |
-
-In each future implementation PR replace `—` with clickable PR/commit URLs, exact test paths/titles and evidence URLs; split rows when ACs have different evidence. Planning commits belong in review issues and the planning PR, not in the implementation column. Preserve superseded evidence/history and stable requirement IDs. A reviewer verifies both directions: each implementation change has a requirement; each completed AC has implementation and test evidence.
-
-Documentation publishing: SITE-01–05 are tracked in [issue #13](https://github.com/kaw393939/spec-driven-tshirt-website/issues/13); this hosting exception does not satisfy application acceptance criteria or M0 approval.
-
-</details>
+Those checks verified the earlier docs, not shopping code. [Issue #17](https://github.com/kaw393939/spec-driven-tshirt-website/issues/17) records the agent/process guide. [What changed](changes.md) explains retired IDs. Use [the atomic commit workflow](development-workflow.md#atomic-commits) and [AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md).

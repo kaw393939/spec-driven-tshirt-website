@@ -4,68 +4,49 @@ title: "What the shop should do"
 
 # What the shop should do
 
-Follow one practice shopping trip. Each story says what a shopper needs; its acceptance criteria describe how we’ll check it. All products and contact details are fictional, prices use US dollars, and checkout never charges money.
+**One T-shirt. Size choices. Pretend purchases.** All behavior below runs in browser JavaScript after the plan is approved. These features are not built yet.
 
-> **New term · Acceptance criterion (AC)** A specific check for a feature. “Unavailable sizes can’t be added” is something we can test. The AC numbers are labels so our issues and tests can point to the same rule.
-{: .callout .concept}
+An **acceptance criterion (AC)** is a check we can try. Each one links to a planned check in [how we check our work](../docs/testing-strategy.md).
 
+## US-06 — Understand the product
 
-## US-01 — Discover products
+“I want to know what this shirt is and why it fits me.” [Issue #22](https://github.com/kaw393939/spec-driven-tshirt-website/issues/22).
 
-As Maya, I want to browse and filter tees so I can find a design in my size. Issue #6, EP-02.
+- **AC-10:** The page shows one product’s name, benefit, image with useful alternative text, USD price, composition/care, and size measurements. A classmate can find the price and explain the product.
+- **AC-11:** Product information is present in HTML without JavaScript. Internal links work, the purchase link reaches the size controls, and demo delivery/return information is clearly labeled fictional. Brand choices follow the reviewed BR-01–03 plan.
 
+## US-07 — Choose a size
 
-<details markdown="1">
-<summary>See the exact checks for this story</summary>
+“I want to choose an available size before adding the shirt.” [Issue #23](https://github.com/kaw393939/spec-driven-tshirt-website/issues/23).
 
-- **AC-01:** Given active seeded products, when catalog loads, then each card shows name, image with meaningful alt text, and price formatted in USD; inactive products are omitted. Loading status is announced.
-- **AC-02:** Given size and color filters, when both are selected, then results contain at least one in-stock variant matching both. Clearing restores all active products. No results shows a reset action; a failed request shows a retry action without erasing selections.
+- **AC-12:** No size is selected initially. Choosing an available size shows which one is selected in words/control state, not just color. Add to cart uses that exact size.
+- **AC-13:** Adding with no size or a simulated unavailable size shows a helpful, associated text message and leaves the cart unchanged. Unavailable sizes are visibly labeled and cannot be added.
 
-</details>
+## US-08 — Manage the cart
 
+“I want to change my choices and understand the total.” [Issue #24](https://github.com/kaw393939/spec-driven-tshirt-website/issues/24).
 
-## US-02 — Choose a variant
+- **AC-14:** The cart shows size, quantity, unit price, and line total. Adding the same size merges its quantity; different sizes have separate lines. Quantities are whole numbers 1–10 per size. Reject zero, negatives, fractions, non-numbers, or totals above 10 without changing the cart.
+- **AC-15:** Update and Remove actions work. Totals equal quantity × price, calculated in integer cents and formatted in USD. Demo shipping and tax are zero and labeled simulated.
+- **AC-16:** Removing the last item shows an empty-cart message, a zero total, and a route back to the product. Refresh resets the in-memory cart; persistence is optional, not required.
 
-As Jordan, I want accurate fit and variant information so I can select a suitable shirt. Issue #7, EP-02.
+## US-09 — Try a purchase
 
+“I want to try checkout and understand that it is a demo.” [Issue #25](https://github.com/kaw393939/spec-driven-tshirt-website/issues/25).
 
-<details markdown="1">
-<summary>See the exact checks for this story</summary>
+- **AC-17:** Before ordering, show cart summary, total, and “Demo purchase — no payment or shipment.” The button says “Place demo order.” Do not request names, emails, addresses, or payment details. Empty cart cannot complete an order.
+- **AC-18:** In the success scenario, one button action shows a demo reference, chosen sizes, quantities, and total; clears the cart; and repeats the demo notice. A subsequent click on the now-empty cart cannot create another confirmation. No cross-session duplicate-order guarantee is claimed.
+- **AC-19:** A clearly labeled “Simulate a problem” control lets the reviewer try failure. That scenario shows a recoverable message and preserves the cart. Switching back to success allows retry. This is local simulation, not a payment gateway.
 
-- **AC-03:** Given a product, when its detail opens, then artwork, name, USD price, composition, care, size measurements in inches and stock availability are available; unknown/inactive products show a recoverable not-found page.
-- **AC-04:** Given a size/color selection, when adding to cart, then an explicit available variant and valid quantity are required. Missing selection, nonexistent combination and zero stock prevent adding and produce a text error associated with the control. The server independently rejects invalid additions.
+## US-10 — Find and share the page
 
-</details>
+“I want a useful search or shared-link description that matches the page.” [Issue #26](https://github.com/kaw393939/spec-driven-tshirt-website/issues/26).
 
+- **AC-20:** Source HTML includes a descriptive title, meta description, one meaningful h1, natural product/audience wording, and a canonical URL matching the actual published page.
+- **AC-21:** Open Graph title, description, type (`website`), URL, and image are present in HTML; page/image URLs are absolute HTTPS URLs and return successfully. The preview accurately represents the product. Actual previews depend on the sharing platform.
+- **AC-22:** The spec includes one audience-fit channel, a sample promotional message, a working product-page link, and the manual interest check described in [the marketing plan](../docs/marketing.md). Actual posting, paid ads, and tracking are not required.
 
-## US-03 — Manage a cart
+> **AI aside · Keep it small.** Ask me to implement one story and its checks. Don’t ask for the whole store in one prompt or one commit.
+{: .callout .ai}
 
-As Maya, I want to review and change my cart so I control my purchase. Issue #8, EP-03.
-
-
-<details markdown="1">
-<summary>See the exact checks for this story</summary>
-
-- **AC-05:** Given a cart, when adding/updating/removing a variant, then duplicate additions merge quantities; quantity must be an integer 1–10 per variant and no greater than stock. Reject invalid updates without changing existing state. A separate Remove action deletes the line. Empty cart provides a catalog link.
-- **AC-06:** Given the same browser session token, when reloading or returning within seven days of the last successful cart mutation, then cart lines persist. After expiry, a new empty cart is returned. Every read/mutation revalidates server prices and stock; changed prices show old/new values and require acknowledgment before checkout. Unavailable/excess quantities remain visibly flagged for correction, and totals use current prices. No client-supplied price is trusted.
-
-</details>
-
-
-## US-04 — Place a sandbox order
-
-As Jordan, I want to place a clearly identified demo order and see its result. Issue #9, EP-03.
-
-
-<details markdown="1">
-<summary>See the exact checks for this story</summary>
-
-- **AC-07:** Given a nonempty valid cart, when requesting a quote, then email, name, street, city, two-letter US state and five-digit ZIP are validated server-side, field errors are visible, and current subtotal, shipping, tax and total appear before explicit consent. Demo shipping/tax are zero and labeled simulated. Empty/stale/unacknowledged carts cannot submit.
-- **AC-08:** Given consent to a current quote, when sandbox checkout succeeds, then exactly one confirmed demo order is stored and inventory decremented atomically. Success clears the purchased cart lines. Simulated decline, stock conflict or transaction failure creates no confirmed order, changes no inventory and preserves the cart with a recoverable error. Two buyers of the last unit cannot both succeed.
-- **AC-09:** Given an order request retry, when the same cart and idempotency key/payload recur within 24 hours, then return the original result without duplicate order or decrement. A changed payload with the same key is rejected. Confirmation shows opaque reference, purchased items and total plus “Demo order — no payment charged or shipment created.” Another session cannot access the order.
-
-Payment inputs are limited to a local sandbox scenario (success/decline); never collect card data. Abandoned carts do not reserve stock. Catalog and cart totals are informational until the confirmed quote is validated at submission.
-
-</details>
-
-**Next:** [See what we build first](../docs/backlog.md), or [learn how we’ll test these rules](../docs/testing-strategy.md).
+[Next: the task order](../docs/backlog.md). These new IDs replace the retired backend/catalog requirements; [see the scope change](../docs/changes.md).

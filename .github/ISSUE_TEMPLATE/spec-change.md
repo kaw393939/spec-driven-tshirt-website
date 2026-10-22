@@ -11,7 +11,7 @@ labels: "type:planning"
 Stable IDs, affected documents and before/after behavior:
 
 ## Impact
-Persona, scope, brand, architecture, tests, dependencies and estimates:
+Audience, brand/visual choice, browser behavior, checks and dependencies:
 
 ## Human review
 Approver and decision record; implementation waits for approval:

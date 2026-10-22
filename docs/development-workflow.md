@@ -1,64 +1,48 @@
 ---
-title: "How we work"
+title: "How we work with AI"
 ---
 
-# How we work
+# How we work with AI
 
-We’ll work in small steps, check each other’s changes, and improve the plan as we learn. That is how we’ll practice **Agile**.
+**Choose → explain → specify → build → check.** Keep the decisions somewhere your classmates can see them.
 
-## One task, from idea to done
+## One feature at a time
 
-1. **Describe the need.** Create a GitHub **issue**: a task with a goal and a checklist.
-2. **Agree on the rule.** Write or update the spec before coding. First, finish [our plan review](approval.md).
-3. **Make a branch.** A branch is a separate place to work. Example: `feat/8-cart`.
-4. **Save small changes.** A **commit** is a named checkpoint. Example: `feat: let shoppers remove a shirt (refs #8)`.
-5. **Check the result.** Run the relevant tests and explain what passed or failed.
-6. **Open a pull request (PR).** Ask someone to review the changes before merging them into the shared branch.
-7. **Close the loop.** Link the spec, issue, commit, and test results. Close the task when its checks are met.
+1. **Write the need.** Open an issue with a spec link and checks. [Use this short activity](activity.md).
+2. **Get a question.** A classmate finds one unclear part. Record their question and your decision in the issue; update the spec.
+3. **Review before code.** Complete [M0 approval](approval.md). Later behavior changes also need agreement on the changed spec first.
+4. **Ask AI for one change.** Name the issue and rule IDs. Ask it to explain the plan and stay within scope.
+5. **Inspect and check.** Review the diff, try the checks, and say what actually happened.
+6. **Open a PR.** Link the spec, issue, changed files, commits and results. Review it before merging; close the issue only when its checks are met.
 
-> **AI aside · You’re still the reviewer.** Ask me to explain a change, challenge an assumption, or show test evidence. An AI-written answer is a draft, not proof that the work is correct.
+> **AI aside · You don’t need to accept my first answer.** Ask “What did you assume?” or “Show me where this change meets the spec.” Put the final choice in the shared record.
 {: .callout .ai}
 
 ## Atomic commits
 
-**One commit is one small change you can explain and undo on its own.** Its code, directly related tests, and necessary docs can travel together. A separate feature or unrelated cleanup belongs in another commit.
+**One commit = one explainable change you can undo on its own.** Its code, necessary docs, and directly related checks may belong together. Don’t mix a size-selector change with an unrelated redesign.
 
-Every non-bootstrap commit links to its primary issue. Put requirement IDs and the source document in the body. Here is a **future example**, after coding is approved:
+Future example, after approval:
 
 ```text
-feat(cart): reject invalid quantities (refs #8)
+feat: require an available size (refs #23)
 
-Requirements: US-03, AC-05
-Spec: specs/functional.md#us-03--manage-a-cart
+Requirements: US-07, AC-12, AC-13
+Spec: specs/functional.md#us-07--choose-a-size
 ```
 
-Before committing, inspect the diff and stage only your files or selected lines. `git diff --cached --check` finds whitespace problems; it does not prove the feature works.
+Inspect the diff and stage only the files/lines for that change. Each authored change commit references its primary issue, rule IDs, and spec path. Merge commits keep the PR link and issue reference. Use `refs #N` while working; `Closes #N` only when the PR fully meets the task. Check closure after merging, especially on a non-default branch.
 
-> **AI aside · Ask what belongs together.** If I mix a cart fix, a color redesign, and a README rewrite into one commit, ask me to split it. You should be able to see why each change exists.
-{: .callout .ai}
+## Keep the trail small and useful
 
-## Leave a trail someone can follow
+**Spec → issue → commit and PR → result.** Put actual links in the issue/PR and update [traceability](traceability.md) when mappings change. Final hashes belong in the issue/PR after committing, not an endless series of self-referencing document edits.
 
-In the issue and PR, link the **spec section → issue → changed files and commit URLs → PR → real check results**. Update [connecting the dots](traceability.md) when the mapping changes. The PR template has a small table for this.
+A good handoff says: what changed, why, what was checked, what was not checked, and where to look. Disclose AI assistance. Don’t share secrets or personal information.
 
-Record actual test commands, test IDs, results and the checked version. For docs-only work, record document and link checks. Add final commit/build links in the PR or issue after committing; a file does not need to record its own hash.
+## Branches and the current review
 
-Use `refs #N` for ongoing work. Use `Closes #N` only when the whole task is done; verify closure because GitHub handles automatic closing differently for non-default target branches.
+Use `docs/<issue>-<name>` or, after approval, `feat/<issue>-<name>`. The full plan and live Pages source are currently `docs/1-planning-baseline`, pending PR #12. Small onboarding-only changes may target `main`. After M0 approval/merge, switch Pages and normal feature work to `main`; verify settings rather than assuming.
 
-**Starting as a new agent?** Read [the root AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md). It explains the reading order, branch choice, approval rules and handoff checklist. The full plan is currently on `docs/1-planning-baseline`, pending PR #12; verify this state before starting.
+[AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md) gives new agents the standing instructions. These are team rules, not automatic enforcement. Application CI/branch protection are not configured. The instructor can add a lightweight PR-review rule; no automation setup is a student prerequisite.
 
-## Keep the rhythm simple
-
-After plan approval, try one-week work cycles: choose a small goal, share progress and blockers, show what works, and discuss what to improve. Work on one story at a time. Review the [task list](backlog.md) each week.
-
-**Ready to start:** the requirement is clear, its checks are written, and its dependencies are finished.
-
-**Done:** the agreed checks pass, someone reviews the PR, and docs and links are updated. Document reviews need human feedback; application tasks need actual test results.
-
-## A few practical rules
-
-Use `docs/`, `feat/`, `fix/`, or `test/` plus the issue number for branches. Labels show planning/feature/quality, priority, and blocked/review status. Don’t start blocked tasks. Keep passwords and personal information out of commits and AI prompts; explain material AI help in PRs.
-
-GitHub Pages publishes these docs automatically. Human approval is currently a team rule; branch protection and application test automation are not configured. Before the first code PR, check available repository controls and set up PR review, no force pushes, and required checks when they exist. Record unavailable controls honestly. A solo owner records signoff in issue #1.
-
-**Learn more:** [GitHub’s guide to branches, commits, and pull requests](https://docs.github.com/en/get-started/using-github/github-flow).
+**Learn more:** [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow).

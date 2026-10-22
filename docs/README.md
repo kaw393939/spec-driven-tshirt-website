@@ -1,38 +1,37 @@
 ---
-title: "Start here"
+title: "Build one product. Explain your choices."
 permalink: /docs/
 ---
 
-# Let’s build a T-shirt shop
+# One product. Your brand. Your decisions.
 
-This is a class project about building a website with AI. Before we write the shop’s code, we agree on what it should do. These pages are that plan.
+Design a website that sells **one T-shirt in different sizes**. Use HTML, CSS, and JavaScript to simulate shopping. No backend or real payments.
 
-**Where we are:** the docs are live. The shop is not built yet. Our next step is to review the plan together.
+Your job is to decide what the site should do, explain why, and check what AI builds.
 
-> **AI aside · Why all these docs?** I can generate code quickly. That doesn’t mean I understood what you wanted. A short, shared plan gives you something concrete to check before I start building.
+## Start here
+
+**[Today’s activity: write your first spec →](activity.md)**
+
+Choose an audience. Make a few brand decisions. Write three clear checks. Ask a classmate what is missing.
+
+- **[See a completed example](example.md)** — follow a size-selection idea from need to check.
+- **[Get help](learn.md)** — short definitions, useful links, and questions to ask AI.
+
+> **AI aside · You make the decisions.** I can suggest designs and write code. You decide whether they fit your audience and whether the result matches your spec.
 {: .callout .ai}
 
-## Start with these three pages
+## Where are we now?
 
-1. **[What are we building?](product-plan.md)** Meet the shoppers and see what belongs in the first version.
-2. **[What should the shop do?](../specs/functional.md)** Follow a shopper from browsing a shirt to placing a pretend order.
-3. **[What do we build first?](backlog.md)** See the work in order, with links to GitHub tasks.
+- **Agreed direction:** one product, sizes, browser-only JavaScript, pretend checkout.
+- **Still yours to decide:** the audience, brand, visual style, copy, and marketing message.
+- **What AI may do now:** help draft and question specifications. Shop coding waits for [plan approval](approval.md).
+- **Your next action:** write a short spec and get a peer’s question before asking for code.
 
-## Pick what you want to learn
+## Keep these nearby
 
-- **Design:** [Our brand](brand-strategy.md) — personality, colors, and honest persuasion.
-- **Teamwork:** [How we work](development-workflow.md) — issues, branches, and reviewing changes.
-- **Quality:** [How we check our work](testing-strategy.md) — small tests and complete shopping journeys.
-- **Technology:** [How the pieces fit](../specs/architecture.md) — browser, server, and database.
-- **Review:** [Before we start coding](approval.md) — the decisions we need to make together.
+[The assignment](product-plan.md) · [Brand and visual design](brand-strategy.md) · [Discovery and marketing](marketing.md) · [Shop rules](../specs/functional.md) · [Task list](backlog.md) · [How we work](development-workflow.md) · [How we check](testing-strategy.md) · [Follow the evidence](traceability.md)
 
-> **New term · Specification** A written description of what something should do. Example: “A shopper can remove a shirt from the cart.” We usually shorten it to **spec**.
-{: .callout .concept}
+New AI helper? Read [AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md).
 
-## You don’t have to know the jargon
-
-Keep the [small glossary and learning links](learn.md) handy. The [specs index](../specs/README.md) has the technical details, and [connecting the dots](traceability.md) shows how a requirement becomes a task and a test.
-
-**Try this:** open the shop rules and find one thing that seems unclear. That’s useful review feedback. You don’t need to write code to help improve a spec.
-
-**Joining as an AI agent?** Start with [AGENTS.md](https://github.com/kaw393939/spec-driven-tshirt-website/blob/main/AGENTS.md), then follow [our atomic commit workflow](development-workflow.md#atomic-commits).
+Instructor: [review and teaching notes](instructor.md). Earlier plans are recorded in [what changed](changes.md).

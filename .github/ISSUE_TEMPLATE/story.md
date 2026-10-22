@@ -1,23 +1,27 @@
 ---
-name: User story
-about: An actionable story linked to approved requirements
-title: "[US-XX] "
-labels: "type:feature"
+name: Small feature or student spec
+about: Write one clear feature, get a peer question, then link the work
+title: "[SPEC] "
+labels: "type:planning"
 ---
 
-## User and outcome
-As [persona], I want [capability] so that [benefit].
+## What is the feature, and who needs it?
 
-## Source of truth
-Spec link, requirement ID, epic and AC IDs:
+## Brand/design choice and reason
 
-## Acceptance criteria
-- Given … when … then …
+## What should happen?
+Link the spec section and stable requirement/AC IDs. New behavior needs agreement before code.
 
-## Planning
-Priority, estimate, milestone, dependencies and M0 approval link:
+## Three checks
+1. Do … expect …
+2. Do … expect …
+3. Do … expect …
 
-## Verification and traceability
-Before work: stable requirement/AC IDs, spec section link and planned unit/integration/E2E test IDs.
+## Peer question and my decision
+What changed, or why did the spec stay the same? Label sample exchanges as examples.
 
-At completion: PR URL, changed file links, atomic commit URLs, exact test paths/titles and result/build evidence. Update docs/traceability.md when its mapping changes. Do not mark planned tests as passed.
+## Work links (fill in as work happens)
+Primary issue; branch; focused commit URLs; PR; check IDs and actual results/version.
+
+## Before coding
+M0 approval link, dependencies, and priority. One product with sizes; browser-only JS; no backend or personal/payment data.
