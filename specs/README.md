@@ -1,15 +1,25 @@
 ---
-title: "Specification index"
+title: "The shop rules"
 permalink: /specs/
 ---
 
-# Specification index
+# The shop rules
 
-Status: proposed; not approved for implementation.
+A spec tells us what to build. You can review the shopper experience without reading database tables or knowing a programming language.
 
-- [Functional requirements and acceptance criteria](functional.md)
-- [Non-functional requirements](non-functional.md)
-- [Architecture and ADR-001](architecture.md)
-- [Data and API contracts](contracts.md)
+## Start with behavior
 
-Stable identifiers: US = user story; AC = acceptance criterion; NFR = quality requirement; ADR = architecture decision. Never silently reuse or renumber an approved identifier. See [traceability](../docs/traceability.md).
+- **[What the shop should do](functional.md):** browse → choose → cart → pretend checkout.
+- **[What “works well” means](non-functional.md):** usable, safe, fast, and dependable.
+
+## Then look under the hood
+
+- **[How the pieces fit](architecture.md):** what the browser, server, and database each do.
+- **[Data and request details](contracts.md):** the field names and messages future code will use. Optional on your first read.
+
+> **Example · Make a rule testable** “The cart is good” is hard to check. “A quantity of zero shows an error and leaves the cart unchanged” gives us something we can try.
+{: .callout .concept}
+
+Labels such as **AC-05** are bookmarks for the team. They let us point to one exact rule in an issue or test. Keep them stable when editing. See the [glossary](../docs/learn.md) and [how we connect the work](../docs/traceability.md).
+
+These rules are still proposals. [Review them before coding](../docs/approval.md).

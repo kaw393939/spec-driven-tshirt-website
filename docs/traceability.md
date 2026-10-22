@@ -1,10 +1,24 @@
 ---
-title: "Traceability matrix"
+title: "Connecting the dots"
 ---
 
-# Traceability matrix
+# Connecting the dots
 
-Status: proposed. `—` means not yet implemented/executed, not missing evidence for a completed feature. Issues link from the [backlog](backlog.md); acceptance definitions live in [functional specs](../specs/functional.md) and [quality specs](../specs/non-functional.md).
+**Traceability** means we can follow a requirement through the work. It helps us answer “Why did we build this?” and “How do we know it works?”
+
+## One example
+
+Shop rule **AC-05** says shoppers can change their cart. That rule points to [issue #8](https://github.com/kaw393939/spec-driven-tshirt-website/issues/8). Later, its pull request will link to the code change and the tests **U-03, I-03, and E-03**.
+
+**Rule → issue → pull request and commit → test result.**
+
+> **AI aside · Follow the links.** If I say a feature is done, you should be able to find the requirement, the change, and a real test result. If one is missing, ask me for it.
+{: .callout .ai}
+
+We haven’t built the shop yet. Dashes below mean “not implemented”; “not run” means exactly that. Keep requirement IDs stable and add real links as work is completed.
+
+<details markdown="1">
+<summary>Optional: full requirement-to-test checklist</summary>
 
 | Requirement | AC / review | Issue | Planned tests / evidence | Implementation PR / commit | Execution result |
 | --- | --- | --- | --- | --- | --- |
@@ -27,3 +41,5 @@ Status: proposed. `—` means not yet implemented/executed, not missing evidence
 In each future implementation PR replace `—` with clickable PR/commit URLs, exact test paths/titles and evidence URLs; split rows when ACs have different evidence. Planning commits belong in review issues and the planning PR, not in the implementation column. Preserve superseded evidence/history and stable requirement IDs. A reviewer verifies both directions: each implementation change has a requirement; each completed AC has implementation and test evidence.
 
 Documentation publishing: SITE-01–05 are tracked in [issue #13](https://github.com/kaw393939/spec-driven-tshirt-website/issues/13); this hosting exception does not satisfy application acceptance criteria or M0 approval.
+
+</details>

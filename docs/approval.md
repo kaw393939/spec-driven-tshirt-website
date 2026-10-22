@@ -1,36 +1,27 @@
 ---
-title: "M0: documentation and specification approval"
+title: "Before we start coding"
 ---
 
-# M0: documentation and specification approval
+# Before we start coding
 
-**State: pending human review. Application coding is blocked.**
+**We’re reviewing the plan. The shop is not approved for coding yet.** Publishing these docs is allowed so everyone can read and discuss them.
 
-Repository owner/instructor is the approver. The planning PR proposes this baseline; its creation is not approval.
+The repository owner or instructor makes the approval decision. We call this first milestone **M0**. A milestone is simply a checkpoint with a clear goal.
 
-## Review checklist
+## What do we need to agree on?
 
-- [ ] Scope, exclusions, persona assumptions, epics and ordered backlog accepted (#2).
-- [ ] Brand archetype, audience, visual identity, copy and ethical persuasion accepted (#3).
-- [ ] Architecture/ADR-001, data/API contracts and sandbox boundaries accepted (#4).
-- [ ] Functional ACs, quality budgets, planned tests, workflow and traceability accepted (#5).
-- [ ] Any requested revisions resolved; #2–#5 closed with human review evidence.
-- [ ] Approver records name, date, planning PR URL and exact approved head commit SHA in #1.
-- [ ] Approved planning PR merged; #1 closed; M0 milestone completed.
-- [ ] Remove M0 blocks from eligible implementation issues; preserve story dependencies.
+- [ ] [The project and task list](product-plan.md) make sense — review issue #2.
+- [ ] [The brand](brand-strategy.md) fits our audience — #3.
+- [ ] [The technical plan](../specs/architecture.md) is workable — #4.
+- [ ] [The rules and tests](testing-strategy.md) are clear — #5.
+- [ ] Requested changes are resolved, and #2–#5 are closed with human review evidence.
+- [ ] The approver records their name, date, PR link, and exact reviewed commit in [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).
+- [ ] [Planning PR #12](https://github.com/kaw393939/spec-driven-tshirt-website/pull/12) is merged; issue #1 and M0 are completed.
+- [ ] Eligible coding tasks are unblocked, keeping their other dependencies.
 
-Any change after approval requires renewed review of affected specifications. An approval comment must refer to the final reviewed head SHA; changing the branch after signoff invalidates that signoff until renewed. Record signoff in #1 to avoid modifying the approved commit just to add its own hash.
+> **Why record a commit?** It identifies the exact version someone reviewed. If the plan changes after signoff, the changed version needs a new review.
+{: .callout .concept}
 
-## Approval record
+**The proposed choices:** Threadform/Creator branding; a US-dollar demo with fictional US addresses; one TypeScript application, PostgreSQL, and pretend payments. See [the technical plan](../specs/architecture.md) before agreeing.
 
-Canonical record: [issue #1](https://github.com/kaw393939/spec-driven-tshirt-website/issues/1).
-
-| Field | Current value |
-| --- | --- |
-| Approver | Pending |
-| Approval date | Pending |
-| Reviewed PR and head SHA | Pending |
-| Open blockers | Human review and approval of #2–#5 |
-| Decision | Not approved for application implementation |
-
-Proposed defaults to decide: Threadform/Creator identity; USD/US synthetic demo; modular TypeScript monolith with PostgreSQL and a local sandbox payment adapter; no real transactions or production deployment. Approving M0 accepts these defaults or records reviewed replacements.
+Approval is **pending**. The name, date, and reviewed version will be recorded in issue #1; we won’t invent them here.

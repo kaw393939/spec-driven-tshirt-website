@@ -1,26 +1,39 @@
-:root { color-scheme: light; font: 17px/1.65 system-ui, sans-serif; color: #18212b; background: #fff; }
+:root { color-scheme: light; font: 18px/1.7 system-ui, sans-serif; color: #24312e; background: #fcfbf8; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-a { color: #0b6660; text-underline-offset: .2em; overflow-wrap: anywhere; }
+a { color: #086358; text-underline-offset: .2em; overflow-wrap: anywhere; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 3px solid #18212b; outline-offset: 4px; }
-header, main, footer { max-width: 1120px; margin: auto; padding: 1.5rem; }
-header { border-bottom: 1px solid #dce1e3; }
-.site-name { color: inherit; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: .7rem; }
-main { min-height: 65vh; }
-.status { border-left: 3px solid #b83a16; background: #faf7f0; padding: .8rem 1rem; font-size: .9rem; }
-h1, h2, h3 { line-height: 1.25; margin-top: 1.8em; overflow-wrap: anywhere; }
-h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); }
-p, li { max-width: 85ch; }
-li + li { margin-top: .35rem; }
-table { display: block; overflow-x: auto; border-collapse: collapse; width: 100%; margin: 1.4rem 0; font-size: .9rem; }
-th, td { text-align: left; vertical-align: top; border: 1px solid #dce1e3; padding: .65rem; min-width: 120px; }
-th { background: #faf7f0; }
-code { background: #f2f4f5; padding: .12rem .3rem; border-radius: 3px; overflow-wrap: anywhere; }
-pre { padding: 1rem; overflow-x: auto; background: #f2f4f5; line-height: 1.5; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #9b3c12; outline-offset: 5px; border-radius: 2px; }
+header, main, footer { max-width: 920px; margin: auto; padding: 1.5rem 2rem; }
+header { border-bottom: 1px solid #dedfd6; }
+.site-name { color: inherit; font-size: 1.1rem; font-weight: 750; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin-top: .7rem; font-size: .9rem; }
+nav a { padding: .25rem 0; }
+main { min-height: 65vh; padding-top: 1rem; padding-bottom: 3rem; }
+.status { color: #5d4c31; background: #f2eddf; border-radius: 6px; padding: .65rem 1rem; font-size: .8rem; }
+h1, h2, h3 { line-height: 1.2; overflow-wrap: anywhere; letter-spacing: -.025em; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 1rem 0 1.3rem; max-width: 21ch; }
+h2 { font-size: 1.4rem; margin-top: 2rem; }
+h3 { font-size: 1.15rem; margin-top: 1.7rem; }
+p, li { max-width: 72ch; }
+li { padding-left: .2rem; }
+li + li { margin-top: .6rem; }
+ol, ul { padding-left: 1.5rem; }
+blockquote { margin: 1.5rem 0; padding: .9rem 1.2rem; border-left: 4px solid #0b6660; background: #eef5f0; border-radius: 0 8px 8px 0; }
+blockquote p { margin: .25rem 0; }
+.callout.ai { background: #f8efdf; border-color: #9b581a; }
+.callout.concept { background: #eef5f0; border-color: #0b6660; }
+details { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid #cdd8d0; border-radius: 8px; background: #fff; }
+summary { cursor: pointer; font-weight: 650; color: #086358; line-height: 1.5; }
+details[open] summary { margin-bottom: 1.2rem; }
+table { display: block; overflow-x: auto; border-collapse: collapse; width: 100%; margin: 1.4rem 0; font-size: .88rem; }
+th, td { text-align: left; vertical-align: top; border: 1px solid #dce1d8; padding: .65rem; min-width: 110px; }
+th { background: #f1f3ed; }
+code { background: #edf0ea; padding: .12rem .3rem; border-radius: 3px; overflow-wrap: anywhere; font-size: .88em; }
+pre { padding: 1rem; overflow-x: auto; background: #edf0ea; line-height: 1.5; }
 pre code { padding: 0; }
-footer { border-top: 1px solid #dce1e3; font-size: .9rem; }
-.skip-link { position: absolute; left: 1rem; top: -5rem; background: #fff; padding: .5rem; }
+footer { border-top: 1px solid #dedfd6; font-size: .85rem; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 1; background: #fff; padding: .5rem; }
 .skip-link:focus { top: .5rem; }
-@media (max-width: 480px) { header, main, footer { padding: 1rem; } }
+@media (max-width: 480px) { :root { font-size: 17px; } header, main, footer { padding-left: 1rem; padding-right: 1rem; } details { padding: .8rem; } }
+@media print { details { display: block; } details > * { display: block !important; } header, footer, .status, .skip-link { display: none; } }

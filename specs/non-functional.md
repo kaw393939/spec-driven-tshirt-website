@@ -1,10 +1,24 @@
 ---
-title: "Quality specification"
+title: "What \u201cworks well\u201d means"
 ---
 
-# Quality specification
+# What “works well” means
 
-Status: proposed; issue #10. Each requirement applies to relevant feature PRs.
+A feature can technically work and still be frustrating to use. These **quality requirements** describe how well the shop should work. Their short label is **NFR**.
+
+- **NFR-01 · Accessible:** people can shop using a keyboard or screen reader.
+- **NFR-02 · Safe:** the server checks prices and requests, protects orders, and avoids leaking private data.
+- **NFR-03 · Usable on phones:** pages fit small screens and load within our agreed speed limits.
+- **NFR-04 · Dependable:** failures don’t corrupt orders, and two buyers can’t both get the last shirt.
+- **NFR-05 · Understandable:** code has clear responsibilities, and finished work links back to its rules and tests.
+
+> **Example · A real check** Try the checkout without a mouse. Can you reach every field, see where focus is, and understand an error? That’s more useful than saying “make it accessible.”
+{: .callout .concept}
+
+[Start with W3C’s accessibility guide](https://www.w3.org/WAI/fundamentals/accessibility-intro/). The detailed checklist below retains our exact targets, including WCAG 2.2 AA, performance limits, and security checks. We have not met or tested them yet.
+
+<details markdown="1">
+<summary>Optional: measurable quality targets and checks</summary>
 
 | ID | Acceptance requirement | Verification |
 | --- | --- | --- |
@@ -15,3 +29,5 @@ Status: proposed; issue #10. Each requirement applies to relevant feature PRs.
 | NFR-05 Maintainability/traceability | Module boundaries respected; every completed AC/NFR links to issue, PR, implementation commit and evidence. No unresolved critical/high security findings; dependency findings reviewed for each release. | Q-05: human architecture/traceability review plus typecheck, lint, dependency audit and required test results. |
 
 The accessibility target refers to [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/). This is a planned verification scope, not a present conformance claim. No availability SLA is promised for an educational local demo.
+
+</details>
